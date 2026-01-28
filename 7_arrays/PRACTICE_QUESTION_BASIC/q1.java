@@ -1,3 +1,5 @@
+//BASIC
+//PRINT ONLY THE NEGATIVE DIGITS FROM THE ARRAY
 package ARRAYS;
 import java.util.Scanner;
 public class q1 {
@@ -17,3 +19,4 @@ public class q1 {
         }
     }
 }
+
