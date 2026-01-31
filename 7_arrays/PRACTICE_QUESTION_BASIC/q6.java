@@ -1,18 +1,18 @@
 //BASIC
-//SEARCH IN ARRAY AN ELEMENT
+//LINEAR SEARCH IN ARRAY AN ELEMENT
 package ARRAYS;
-
 public class q6 {
     public static void main(String[] args) {
-        int a = 7;
+        int a = 5;
         int[] arr={1,5,5,6};
         boolean y = false;
         for(int i=0;i< arr.length;i++){
-//            boolean y = false;
             if(arr[i]==a){
+                System.out.println("yes target element exists in index "+i);
                 y = true;
+                break;
             }
         }
-        System.out.println(y);
+        if(!y) System.out.println("element does not exists in the array");
     }
 }
