@@ -12,4 +12,11 @@ public class q9 {
         }
         System.out.println(Arrays.toString(arr));
     }
+     // while(start<end){                 using while loop
+     //        int temp = arr[start];
+     //        arr[start] = arr[end];
+     //        arr[end] = temp;
+     //        start++;
+     //        end--;
 }
+
