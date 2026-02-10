@@ -28,3 +28,16 @@ int[] arr = {1, 2, 3};  // Initialization
 multi dimensional array=represents data in rows and columns, accessed via multiple indices.
 int[][] matrix = new int[3][3]; // 2D array
 int[][] jagged = new int[3][];  // Jagged array (rows with varying columns)
+
+                                                      >>linear data structure
+array is a linear data structure because it stores elements in a sequential manner,
+in memory these elements are placed in contiguous blocks,
+since every element is right next to the other the computer can calculate the exact memory address of any element using a simple formula, making access very fast.
+the time complexity of accessing an element by index is O(1)
+
+                                                      >>arrays of other data types
+in java array are not limited to integers only. you can create arrays of primitives or objects
+primitive array= int[] double[] boolean[] these stores the actual values
+object array= string[] or even an array of custom class like student[]
+              in an array of object the array does not store the objects themselves; it stores references(memory addresses) to where those objects live in the heap.
+
