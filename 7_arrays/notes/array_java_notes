@@ -1,5 +1,5 @@
 A array is a data structure which is fixed sized ordered collection of elements of the same data type, stored in contiguous memory locations.
->Properties:
+                                                       >Properties:
 Contiguous memory allocation: array stores elements in consecutive memory locations, enabling O(1) access time via index-based addressing. For primitive types, the array stores actual values; for reference types, it stores memory addresses (reference) to objects.
 Fixed sized
 Zero-based indexing
@@ -7,8 +7,9 @@ Homogeneous elements
 Length property
 Default initialization
 Random access in O(1) time 
->Why? Is array => consider that if you have to store data of any packages stored in serial manner then it can be feasible to store in array as based on index it can be retrieve update easily and many other features available.
->>declaration and initialization
+                                                      >Why? Is array 
+=> consider that if you have to store data of any packages stored in serial manner then it can be feasible to store in array as based on index it can be retrieve update easily and many other features available.
+                                                      >>declaration and initialization
 There are more than one way to declare an array in java
 Way1:
 Declaration only: you declare a variable that will hold an array of datatype but the size of the array isn’t defined.
@@ -20,7 +21,7 @@ You declare the array and its sized is automatically determined by the number of
 Way4;
 Declaration and then instantiation: you declare an array variable first and then, at a later point in your code, create the actual array object and assign it to the variable.
 
->>TYPES OF ARRAYS
+                                                      >>TYPES OF ARRAYS
 Single dimensional array= Stores elements in a linear format (one row).
 int[] arr = new int[5]; // Declaration
 int[] arr = {1, 2, 3};  // Initialization
