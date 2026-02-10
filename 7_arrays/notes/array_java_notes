@@ -7,8 +7,8 @@
 84 array of other data types
 97 passing array to methods
 102 shallow copy and deep copy
-
-
+109 sorting method 
+115 anonymous array
 
 
 
@@ -105,3 +105,14 @@ int[] arr2 = arr1;
 which results chaning in arr2 also change arr1
 deep copy is when you create a completely new array in memory and copy every value over
 and then both the array are independent of each other.
+
+                                                     >>sorting(built in)
+the enhanced for-loop is great for readability, but it has a specific limitation in java.
+syntax: for(int num : arr){ ... }
+constraint: you cannot change the values inside the original array using a for-each loop
+why? the variable num is just local copy of the value at that index. assigning a new value to num does not point back to the array memory slot. use a standard for(int i=0...) loop if you need to modify elements.
+
+                                                     >>anonymous arrays
+in java you can pass an array to a method without even giving it a name:
+sum(new int[]{10, 20, 30});
+this is useful for quick calculations where you don't need to reuse the array later in the code.
