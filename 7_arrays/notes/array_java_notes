@@ -1,3 +1,49 @@
+47. definition
+48. properties
+56 why is array
+58 declaration and initialization
+70 types of array
+78 linear data structure
+84 array of other data types
+97 passing array to methods
+102 shallow copy and deep copy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 A array is a data structure which is fixed sized ordered collection of elements of the same data type, stored in contiguous memory locations.
                                                        >Properties:
 Contiguous memory allocation: array stores elements in consecutive memory locations, enabling O(1) access time via index-based addressing. For primitive types, the array stores actual values; for reference types, it stores memory addresses (reference) to objects.
@@ -41,3 +87,21 @@ primitive array= int[] double[] boolean[] these stores the actual values
 object array= string[] or even an array of custom class like student[]
               in an array of object the array does not store the objects themselves; it stores references(memory addresses) to where those objects live in the heap.
 
+                                                      >>index out of bound exception
+this is a common runtime error in java. it happens when you try to access an index that does not exist.
+java arrays are 0 indexed if an array has a length of n the valid indices are 0 to n-1
+but why starts from 0 due to offset principle which is like when you create an array java allocates a contiguous block of memory. the array variable holds the memory address of the very first element the base address
+so index 0 means you are at the start- there is 0 distance from the base address and index 1 means you are 1 element away from the start.
+and computational efficiency is also a reason which is based on formula > Location = Base Address + (Index × Size of Element)
+
+                                                      >>passing arrays to methods
+when you pass an array to a method you are passing the reference to the array not a copy of the whole array
+so if the method changes the elements of the array those changes will persist outside the method which simply means it affect the original array
+and this increase efficiency by not dublicating the original array
+
+                                                      >>shallow copy vs deep copy
+shallow copy is when you create a new array variable that points to the same memory address as the old one
+int[] arr2 = arr1;
+which results chaning in arr2 also change arr1
+deep copy is when you create a completely new array in memory and copy every value over
+and then both the array are independent of each other.
