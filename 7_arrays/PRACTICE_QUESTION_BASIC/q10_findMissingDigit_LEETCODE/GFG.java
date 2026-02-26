@@ -1,7 +1,9 @@
 //EASY
 //FIND MISSING NUMBER
+//Input: nums = [0,1]
+//Output: 2
 package ARRAYS;
-public class q12 {
+public class q10_findMissingDigit_LEETCODE {
     public static void main(String[] args) {
         int[] arr = {3,1,0};
         int n = arr.length;
