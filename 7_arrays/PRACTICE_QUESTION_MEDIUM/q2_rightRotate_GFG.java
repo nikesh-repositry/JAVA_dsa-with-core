@@ -4,7 +4,7 @@ RIGHT ROTATE THE ARRAY BY K
  */
 package ARRAYS;
 import java.util.Arrays;
-public class q11 {
+public class q2_rightRotate_GFG{
     static void reverse(int[] arr, int start,int end){
         while(start<end){
             int temp = arr[start];
