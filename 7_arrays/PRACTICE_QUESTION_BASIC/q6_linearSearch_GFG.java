@@ -1,7 +1,7 @@
 //BASIC
 //LINEAR SEARCH IN ARRAY AN ELEMENT
 package ARRAYS;
-public class q6 {
+public class q6_linearSearch_GFG {
     public static void main(String[] args) {
         int a = 5;
         int[] arr={1,5,5,6};

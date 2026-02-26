@@ -3,7 +3,7 @@
 //FIND TWO NUMBERS IN THE ARRAY THAT ADD UP TO THE GIVEN TARGET VALUE
 //USING BRUTE FORCE
 package ARRAYS;
-public class q7   {
+public class q7_twoSum_leetcode   {
     public static void main(String[] args) {
         int[] arr = {1,2,3,3,3,4};
         int target = 6;

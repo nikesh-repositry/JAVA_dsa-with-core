@@ -2,7 +2,7 @@
 //PRINT ONLY THE NEGATIVE DIGITS FROM THE ARRAY
 package ARRAYS;
 import java.util.Scanner;
-public class q1 {
+public class q1_printOnlyNegativeDigits_GFG {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the size of array");

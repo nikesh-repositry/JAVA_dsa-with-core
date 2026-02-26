@@ -2,7 +2,7 @@
 //PRINT THE MAXIMUM ELEMENT IN THE ARRAY
 package ARRAYS;
 import java.util.Scanner;
-public class q3 {
+public class q3_largestElement_GFG {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] arr = {1,2,5,4,8,7,55,645961,0};

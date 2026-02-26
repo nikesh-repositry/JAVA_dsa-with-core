@@ -1,7 +1,7 @@
 //BASIC
 //MULTIPLY ODD INDEXED ELEMENTS BY 2 AND ADD 10 TO EVEN INDEXED ELEMENTS
 package ARRAYS;
-public class q5 {
+public class q5_oddEvenTransformation_GFG {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
         for(int i=0;i<arr.length;i++){

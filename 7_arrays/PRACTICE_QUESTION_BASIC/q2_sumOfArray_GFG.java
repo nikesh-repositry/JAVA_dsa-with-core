@@ -2,7 +2,7 @@
 //PRINT SUM OF ELEMENTS OF THE ARRAY
 package ARRAYS;
 import java.util.Scanner;
-public class q2 {
+public class q2_sumOfArray_GFG {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         System.out.print("enter the size of array: ");

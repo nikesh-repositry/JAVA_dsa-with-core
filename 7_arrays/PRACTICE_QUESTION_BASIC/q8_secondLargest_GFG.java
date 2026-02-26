@@ -3,7 +3,7 @@
 //FIND THE SECOND LARGEST ELEMENT IN THE ARRAY
 //USING SINGLE FOR LOOP
 package ARRAYS;
-public class q8 {
+public class q8_secondLargest_GFG{
     public static void main(String[] args) {
         int[] arr = {-52,-65161,0,68468,656816,56161,68168161,13665164,651651};
         int max1 = Integer.MIN_VALUE;

@@ -2,7 +2,7 @@
 //PRINT THE MINIMUM ELEMENT OF ARRAY
 package ARRAYS;
 //import java.util.Scanner;
-public class q4 {
+public class q3_smallestElement_GFG {
     public static void main(String[] args) {
         int[] arr={1,0,565,65,-61};
         int min=Integer.MAX_VALUE;
