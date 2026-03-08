@@ -1,1 +1,148 @@
+TIME AND SPACE COMPLEXITY 
+
+=algorithm analysis
+programmers write algo and codes but it is not necessary that the designed code is the most optimal
+the algo need to be judged so that we will more harder to get more efficient algo
+for this we do algorithm analysis which means process of evaluating the efficiency of an algo in terms of:
+execution time
+memory usage
+scalability for large input sizes
+it helps developers determine which algo performs better for large data
+
+
+=why algorithm analysis is important
+Performance Optimization
+Helps choose the fastest algorithm.
+
+Scalability
+Determines how the program behaves when data size increases.
+
+Efficient Resource Usage
+Reduces CPU usage and memory consumption.
+
+Real-World Applications
+Used in search engines, navigation systems, social media, etc.
+
+
+
+=for example algo a checks elements one by one and algo b uses binary search
+for one million elements
+linear search  1000000
+binary search  approx 20 
+so you see the difference, interesting right 
+so when you optimized you algo which runs through millions of data then you save you cpu usage, monitor screen time, your time, electricity, produce less heat delays destruction of nature, your bill and ultimately makes everyone happy.
+
+
+=TIME COMPLEXITY
+it measures how the running time of an algorithm grows with input size(n) rather than the actual time taken on a machine to execute it.
+it represents the numbers of operations executed
+it does not depends on cpu speed, programming language, compiler optimization
+it depends on algorithm design, input size
+represents via T(n)=numbers of steps required
+TYPES
+best case = minimum time required by an algorithm
+worst case = the maximum time required by an algo
+average case = expected time taken for all possible inputs
+
+
+=Big-O notation
+it represents the upper bound of an algorithm running time
+it describes how runtime grows as input size increases
+if the runtime grows proportional to n^2 then O(n^2)
+if the runtime grows proportional to n then O(n)
+and if T(n)=5n^2+2n+10 then O(n^2)
+Big-O ignores:
+constants
+lower order terms
+
+example
+T(n)=10n+50
+complexity becomes O(n)
+
+other asymptotic notations used in algorithm analysis:
+Big-Omega Ω → represents lower bound (best case)
+
+
+=common time complexity types
+complexity        notation      meaning
+constant          O(1)          execution time does not depend on input size
+logarithmic       O(log n)      problem size reduces by half each step
+linear            O(n)          runtime increases directly proportional to input size
+linearithmic      O(nlogn)      used in efficient sorting algo
+quadratic         O(n^2)        nested loops
+cubic             O(n^3)        three nested loops
+exponential       O(2^n)        recursive fibonnaci without optimization
+factorial         O(n!)         generating all permutation
+
+
+
+=SPACE COMPLEXITY
+measures how much memory an algorithm requires as input size increases
+it includes:
+input space
+auxiliary space(extra space)
+
+input space
+memory required to store input data
+
+auxiliary space
+extra memory used by algorithm apart from input data
+
+example
+merge sort uses extra array so auxiliary space = O(n)
+
+bubble sort does not use extra memory so auxiliary space = O(1)
+
+=components of space complexity
+memory that does not depends on input size = fixed part
+program instruction
+variables
+constant
+
+memory depending on input size = variable part
+arrays
+dynamic objects
+recursive stack
+
+example
+factorial using recursion uses stack memory for each recursive call so space complexity becomes O(n)
+
+another example
+iterative factorial uses only variables so space complexity becomes O(1)
+
+=TIME AND SPACE TRADE OFF
+sometimes faster algorithms use more memory
+sometimes memory efficient algorithms are slower
+
+example
+merge sort
+time complexity = O(n log n)
+space complexity = O(n)
+
+bubble sort
+time complexity = O(n^2)
+space complexity = O(1)
+
+developers choose algorithm depending on system requirements
+
+=real world importance
+used in large scale systems like
+google search engine
+facebook feed ranking
+amazon product recommendation
+navigation systems like google maps
+database indexing systems
+
+IN INTERVIEW ALWAYS AIM FOR O(LOG N), O(N), O(N LOG N)
+
+avoid O(N^2), O(2^N), O(N!) for large datasets whenever possible
+
+
+
+
+
+
+
+
+
 
