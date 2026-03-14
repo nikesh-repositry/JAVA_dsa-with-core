@@ -3,12 +3,22 @@ BASIC QUESTION
 2. print sum of elements of the array
 3. print max element of the array 
 4. print min element of the array
-5. print array after multiplying odd elements by 2 and add 10 to even elements
-6. search specific number in the array
+5. print array after multiplying odd elements by 2 and add 10 to even elements(odd even transformation)
+6. search specific number in the array(linear search)
 7. two sum(find two numbers which addition is equal to given target)
 8. second largest element in array
 9. reverse the array
-10. rotate the array
+10. find missing digit
+11. segregate 0 and 1 
+12. move zeroes to left
+13. segregate 0 and 1 (again but without counting)
+14. wave array
+15. segregate 0 1 2 (dutch national problem)
+16. rotate left the array
+17. rotate right the array
+18. segregate 0 and 1 (quick sort method)
+19. medium of two sorted array by combining
+20. container with most water 
 
 
 
