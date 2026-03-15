@@ -1,0 +1,88 @@
+BUBBLE SORT IS ONE OF THE SIMPLEST SORTING ALGO
+
+
+
+
+
+
+
+
+HOW IT WORKS
+campares the first and second elements
+if the first is greater than the second, swap them
+move to the next pair and repeat until the end of the array
+repeat the entire process n-1 times
+
+Input Array:
+[5, 8, 7, 5, 6, 4, 2, 56, 6, 9, 20]
+
+Pass 1: Finding the Largest
+- Compare [5, 8] → 5 < 8 → No swap
+- Compare [8, 7] → 8 > 7 → Swap → [5, 7, 8, 5, 6, 4, 2, 56, 6, 9, 20]
+- Compare [8, 5] → 8 > 5 → Swap → [5, 7, 5, 8, 6, 4, 2, 56, 6, 9, 20]
+- Compare [8, 6] → 8 > 6 → Swap → [5, 7, 5, 6, 8, 4, 2, 56, 6, 9, 20]
+- Continue until 8 meets 56
+- Compare [8, 56] → 8 < 56 → No swap
+- Compare [56, 6] → 56 > 6 → Swap
+- Compare [56, 9] → 56 > 9 → Swap
+- Compare [56, 20] → 56 > 20 → Swap
+
+End of Pass 1:
+[5, 7, 5, 6, 4, 2, 8, 6, 9, 20, 56]
+Result: Largest element (56) has bubbled to the end and is locked.
+
+Pass 2: Finding the 2nd Largest
+- Compare [5, 7] → No swap
+- Compare [7, 5] → Swap → [5, 5, 7, 6, 4, 2, 8, 6, 9, 20, 56]
+- Compare [7, 6] → Swap → [5, 5, 6, 7, 4, 2, 8, 6, 9, 20, 56]
+- 7 continues swapping with smaller numbers
+- Compare [7, 8] → 7 < 8 → No swap
+- Compare [8, 6] → Swap
+- Compare [8, 9] → No swap
+- Compare [9, 20] → No swap
+
+End of Pass 2:
+[5, 5, 6, 4, 2, 7, 6, 8, 9, 20, 56]
+Result: Second largest element (20) is locked at the second-to-last position.
+
+Summary of Bubbling:
+- Pass 1: [..., 20, 56]
+- Pass 2: [..., 9, 20, 56]
+- Pass 3: [..., 8, 9, 20, 56]
+- Pass 4: [..., 7, 8, 9, 20, 56]
+- Pass 5: [..., 6, 7, 8, 9, 20, 56]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Case,Time Complexity,When does this happen?
+Best     Case,O(N),Array is already sorted (Optimized version only).
+Average  Case,O(N2),Array is in random order.
+Worst    Case,O(N2),Array is sorted in reverse order.
+Space Complexity,O(1),"No extra space needed; it sorts ""in-place."""
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stable? Yes (it preserves the relative order of equal elements).
+In-place? Yes (it doesn't need extra memory).
+Use Case? Education purposes or extremely small datasets.
