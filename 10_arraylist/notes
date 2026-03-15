@@ -1,1 +1,13 @@
+arraylist is one of the most commonly used data structure in java
+it is called as dynamic array 
+it is like a regular array but it can grow or shrink in size automatically as you add or remove items
 
+why to arraylist
+well in standard java array you must specify the size at the beginning and it can not be changed later
+arraylist solves this for you with
+flexible size
+can only hold objects
+but it is slightly slower but more flexible
+
+arraylist cannot store primitive types like int, boolean or char directly 
+you must use their wrapper classes
