@@ -9,6 +9,10 @@ public class BASICS {
         cars.add("bmw");
         cars.add("ford");
 
+        //size
+        int length = cars.size();
+        System.out.println(length);
+
         //accessing elements
         String mycar = cars.get(0);
         System.out.println(mycar);
