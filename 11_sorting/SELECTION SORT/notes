@@ -1,0 +1,67 @@
+SELECTION SORT IS ONE OF THE SIMPLEST SORTING ALGORITHMS
+
+HOW IT WORKS
+Step 1: Assume the first element of the unsorted part is the smallest (we store its index).
+
+Step 2: Compare this "assumed smallest" with every other element in the remaining unsorted part.
+
+Step 3: If a smaller element is found, update your "smallest index" to point to this new value.
+
+Step 4: Once you reach the end of the unsorted part, swap the element at the "smallest index" with the first element of the unsorted part.
+
+Step 5: Repeat the process for the next position until the entire array is sorted.
+
+
+
+
+
+
+Input Array:
+[64, 25, 12, 22, 11]
+
+Pass 1: Finding the Smallest
+- Compare [64, 25] → 25 is smaller
+- Compare [25, 12] → 12 is smaller
+- Compare [12, 22] → 12 is smaller
+- Compare [12, 11] → 11 is smaller
+- Swap 64 ↔ 11
+Result: [11, 25, 12, 22, 64]
+
+Pass 2: Next Smallest
+- Compare [25, 12] → 12 is smaller
+- Compare [12, 22] → 12 is smaller
+- Compare [12, 64] → 12 is smaller
+- Swap 25 ↔ 12
+Result: [11, 12, 25, 22, 64]
+
+Pass 3: Next Smallest
+- Compare [25, 22] → 22 is smaller
+- Compare [22, 64] → 22 is smaller
+- Swap 25 ↔ 22
+Result: [11, 12, 22, 25, 64]
+
+Pass 4: Next Smallest
+- Compare [25, 64] → 25 is smaller
+- No swap needed
+Result: [11, 12, 22, 25, 64]
+
+Pass 5: Last element already in place
+Final Sorted Array: [11, 12, 22, 25, 64]
+
+--------------------------------------------
+
+
+
+
+
+
+
+Case,Time Complexity,When does this happen?
+Best     Case,O(N^2),Even if array is sorted, selection sort still scans entire array.
+Average  Case,O(N^2),Array is in random order.
+Worst    Case,O(N^2),Array is sorted in reverse order.
+Space Complexity,O(1),"No extra space needed; it sorts ""in-place."""
+
+Stable? No (it may change the relative order of equal elements).
+In-place? Yes (it doesn't need extra memory).
+Use Case? Good for small datasets or when memory is extremely limited.
