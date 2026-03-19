@@ -1,1 +1,63 @@
+INSERTION SORT
+
+HOW IT WORKS
+Step 1: Start from the second element (index 1). The first element is considered sorted.
+
+Step 2: Compare the current element with the element just before it.
+
+Step 3: If the current element is smaller, swap them.
+
+Step 4: Keep moving the current element backward (by swapping) until it is in the correct position.
+
+Step 5: Repeat this process for all elements until the entire array is sorted.
+
+
+Input Array:
+[5, 6, 78, 0, 5, 2, 0, 55, 0, 9, 9, 2]
+
+Pass 1: Key = 6
+- Compare with 5 → already in correct place
+Result: [5, 6, 78, 0, 5, 2, 0, 55, 0, 9, 9, 2]
+
+Pass 2: Key = 78
+- Compare with 6 → already in correct place
+Result: [5, 6, 78, 0, 5, 2, 0, 55, 0, 9, 9, 2]
+
+Pass 3: Key = 0
+- Compare with 78 → swap
+- Compare with 6 → swap
+- Compare with 5 → swap
+Insert 0 at start
+Result: [0, 5, 6, 78, 5, 2, 0, 55, 0, 9, 9, 2]
+
+Pass 4: Key = 5
+- Compare with 78 → swap
+- Compare with 6 → swap
+Insert 5 before 6
+Result: [0, 5, 5, 6, 78, 2, 0, 55, 0, 9, 9, 2]
+
+Pass 5: Key = 2
+- Compare with 78 → swap
+- Compare with 6 → swap
+- Compare with 5 → swap
+- Compare with 5 → swap
+Insert 2 after 0
+Result: [0, 2, 5, 5, 6, 78, 0, 55, 0, 9, 9, 2]
+
+... (process continues for each element)
+
+Final Sorted Array:
+[0, 0, 0, 2, 2, 5, 5, 6, 9, 9, 55, 78]
+
+--------------------------------------------
+
+Case,Time Complexity,When does this happen?
+Best     Case,O(N),Array is already sorted (only one comparison per element).
+Average  Case,O(N^2),Array is in random order.
+Worst    Case,O(N^2),Array is sorted in reverse order.
+Space Complexity,O(1),"No extra space needed; it sorts ""in-place."""
+
+Stable? Yes (equal elements keep their relative order).
+In-place? Yes (it doesn't need extra memory).
+Use Case? Good for small datasets, and when stability matters.
 
