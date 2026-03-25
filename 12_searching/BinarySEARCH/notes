@@ -1,1 +1,58 @@
+Binary Search Algorithm – Step Execution
+
+1. Problem:
+   - Given a sorted array, find the index of a target element.
+   - If not found, return -1.
+
+2. Core Idea:
+   - Repeatedly divide the search interval in half.
+   - Compare the target with the middle element.
+   - Narrow the search space until found or exhausted.
+
+3. Pseudocode:
+   left = 0
+   right = arr.length - 1
+
+   while (left <= right):
+       mid = left + (right - left) / 2
+
+       if arr[mid] == target:
+           return mid
+       else if arr[mid] < target:
+           left = mid + 1
+       else:
+           right = mid - 1
+
+   return -1
+
+4. Step-by-Step Execution Example:
+   Array: [2, 4, 6, 8, 10, 12, 14]
+   Target: 10
+
+   Step 1: left = 0, right = 6
+           mid = 0 + (6 - 0)/2 = 3
+           arr[3] = 8
+           8 < 10 → move left → left = 4
+
+   Step 2: left = 4, right = 6
+           mid = 4 + (6 - 4)/2 = 5
+           arr[5] = 12
+           12 > 10 → move right → right = 4
+
+   Step 3: left = 4, right = 4
+           mid = 4 + (4 - 4)/2 = 4
+           arr[4] = 10
+           Found target at index 4
+
+5. Key Notes:
+   - Using mid = left + (right - left)/2 avoids integer overflow.
+   - Time Complexity: O(log n)
+   - Space Complexity: O(1)
+   - Works only on sorted arrays.
+
+6. Edge Cases:
+   - Empty array → return -1
+   - Target smaller than all elements → return -1
+   - Target larger than all elements → return -1
+   - Duplicate elements → returns one valid index, not necessarily the first.
 
