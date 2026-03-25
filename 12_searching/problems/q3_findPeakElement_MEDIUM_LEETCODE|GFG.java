@@ -1,0 +1,22 @@
+//find the peak element present in the array and return its index
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int start = 0;
+        int end = nums.length-1;
+        while(start<end){
+            int mid = start+(end-start)/2;
+            if(nums[mid]<nums[mid+1]){
+                start=mid+1;
+            }else{
+                end=mid;
+            }
+        }
+        return start;
+    }
+}
+/*
+Example 2:
+
+Input: nums = [1,2,1,3,5,6,4]
+Output: 5
+Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.*/
