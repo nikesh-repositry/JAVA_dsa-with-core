@@ -1,6 +1,9 @@
 /*
 string basics
 built in methods
++ operator
+comparison
+int to string
 immutability
 string builder
 
@@ -35,13 +38,16 @@ public class basic {
         System.out.println(str.contains("shk")); //true
         System.out.println(str.startsWith("nik")); //ture
         System.out.println(str.endsWith("kk")); //true
-        System.out.println(str.substring(1,5)); //ikes
+        System.out.println(str.substring(1,5)); //ikes (one less than last index number
 
         //"+" operator
         //when you add a number to a string, the number is converted to a string and appended
         //left to right execution
         System.out.println("abc" + 10 + 20); // abc1020
         System.out.println(10 + 20 + "abc"); // 30abc
+        System.out.println(10 +"abc"+20); //10abc20
+        System.out.println('A'+"abc"); //Aabc
+        System.out.println('A'+2+"abc"); //67abc
 
         //comparing string
         //==(reference comparison) checks if both variables point to the same memory location. it may return false even if the text is identical if one is in the SCP and the other is in the heap
@@ -52,6 +58,17 @@ public class basic {
         System.out.println(a == b);        // false (different references)
         System.out.println(a.equals(b));   // true (same content)
         System.out.println(a.compareTo("Jb")); // -1 (lexicographic)
+
+        //interger to string conversion
+        int n1 = 156;
+        String s1 = ""+n1;   //concatenation with an empty string
+        System.out.println(s1);
+        String s2 = Integer.toString(n1); //works only on int/Integer
+                                          //throws NullPointerException
+        System.out.println(s2);
+        String s3 = String.valueOf(n1); //works on any primitive or object
+                                        //calls toString() if object, returns "null" if object is null
+        System.out.println(s3);
 
 
     }
