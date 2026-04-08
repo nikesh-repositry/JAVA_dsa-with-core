@@ -1,1 +1,74 @@
+THE MAIN TWO STEPS OF ANY RECURSION CODE IS
+1. THE BASE CASE
+   this is the simplest possible version of the problem means that this is the condition you know which will be achieve in order to complete the solution and here you the answer already that what would the code return here.
+   this part is to stop the recursive call and the it rollback
+2. THE RECURSIVE STEP
+   this is where the method call itself but with a smaller input and this call occurs again and again which must move closer to the base case with every call and eventually hit that base case condition.
 
+
+
+
+THE CALL STACK
+when you call a method in java, the computer puts it in a stack
+PUSHING: each recursive call adds a new plate to the top.
+WAITING: the bottom plates can not finish unitl the top plate is done.
+POPPING: once the base case is hit, the plates are removed one by one, passing the result back down.
+
+
+
+
+REMEMBERS
+STACK OVER FLOW
+if you forget your base case or base case is wrong or input does not get smaller then you get a stackoverflowerror . which means the computer stack memory is full now
+LEAP OF FAITH
+when writing a recursion code do not try to trace 100 or 1000 steps manully in you brain
+rather just cheack and ensure that you base is corret and your recursive call handles a smaller version of the problem
+
+
+
+
+RECURSION VS ITERATION
+anything you do with a for loop can be done with recursion and vice versa
+recursion is cleaner often and easier to read for trees and graphs dsa 
+but loops are usally faster and use less memory than recursion
+
+
+
+
+WHEN SHOULD USE IT
+IF
+can the problem be divided into smaller sub problems
+does the problem have a clear stopping point means base case
+is the iterative version too messy to write (loop)
+
+
+
+
+
+
+TYPES OF RECURSION IN JAVA
+1. DIRECT 
+2. INDIRECT
+3. TAIL (MOST OPTIMIZED)
+4. HEAD
+5. TREE
+
+1. DIRECT RECURSION
+a method call itself directly 
+
+2. INDIRECT RECURSION
+a method call another method which then call the first method back again
+method a call method b and method b call method a
+
+3. TAIL RECURSION
+the recursive call is the last statement of the method
+there is no pending work left after the call returns
+
+4. HEAD RECURSION(NO-TAIL)
+this is opposite 
+the recursive call is not the last statement of the method
+some task are performed after the call
+
+5. TREE RECURSION
+instead of calling itself once the method calls itself two or more times
+creating branches effect
