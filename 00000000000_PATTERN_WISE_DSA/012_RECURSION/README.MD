@@ -1,0 +1,14 @@
+### 🔄 RECURSION
+- **Backtracking**
+  - Exploration  
+    - Decision Tree  
+    - Choose-Explore-Unchoose  
+    - Subsets (Power set)  
+    - Permutations/Combinations (nCr)  
+    - Word search on grid  
+    - Palindrome partitioning  
+  - Pruning / State Tracking  
+- **Divide & Conquer**
+  - Merge Sort pattern  
+  - Quick Select (Kth largest)  
+  - Count inversions  
