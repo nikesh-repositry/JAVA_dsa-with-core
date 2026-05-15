@@ -1,0 +1,13 @@
+### 🔤 STRING
+- **Sliding Window**
+  - Longest substring without repeat  
+  - Minimum window substring  
+  - Anagram / permutation in string  
+- **Two Pointers**
+  - Palindrome check  
+  - Reverse words / characters  
+  - String compression  
+- **Pattern Matching**
+  - KMP (failure function)  
+  - Rabin-Karp (rolling hash)  
+  - Z-algorithm  
