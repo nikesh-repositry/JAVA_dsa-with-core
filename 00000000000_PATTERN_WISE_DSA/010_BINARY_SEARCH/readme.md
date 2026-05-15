@@ -1,0 +1,21 @@
+### 📦 ARRAY
+- **Sliding Window**
+  - Fixed Size  
+  - Variable Size  
+    - Expand-Shrink  
+    - Monotonic Window  
+- **Two Pointer**
+  - Opposite ends (left + right)  
+  - Same direction (fast & slow pointers)  
+  - Partition / Dutch flag  
+- **Prefix Based**
+  - Prefix Sum  
+  - Prefix XOR  
+  - 2D Prefix  
+- **Kadane’s / Subarray**
+  - Max subarray sum (Kadane’s)  
+  - Max product subarray  
+  - Subarray with given XOR / sum  
+- **Binary Search**
+  - On index  
+  - On answer  
