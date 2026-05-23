@@ -1,4 +1,4 @@
-//3 sum leetcode 15
+// implement 3 sum leetcode 15
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
 
