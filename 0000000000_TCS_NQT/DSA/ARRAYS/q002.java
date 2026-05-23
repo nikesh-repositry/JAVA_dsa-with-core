@@ -1,4 +1,4 @@
-//twp sum 2 leetcode 167
+//twp sum 2 leetcode 167 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int i=0,j=nums.length-1;
