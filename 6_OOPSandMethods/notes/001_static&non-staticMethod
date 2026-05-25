@@ -1,0 +1,28 @@
+Difference between static and non-static methods in Java
+--------------------------------------------------------
+
+Case 1: public long maximumSubarraySum(int[] arr, int k)
+- This works because you usually call it through an OBJECT.
+  Example:
+    Solution obj = new Solution();
+    obj.maximumSubarraySum(arr, k);
+- Non-static methods belong to objects, so you must create an object first.
+
+Case 2: public long sum(int[] arr, int k)
+- This did NOT work in your SLIDINGWINDOWBASICS class because you tried:
+    System.out.println(sum(arr, k));
+- But 'main' is static, and you called 'sum' directly without an object.
+- Compiler error: "non-static method sum(int[], int) cannot be referenced from a static context".
+
+Rule of Thumb:
+- static methods → belong to the CLASS, can be called directly inside static methods like main.
+- non-static methods → belong to OBJECTS, must be called using an object reference.
+
+Fix Options:
+1. Make the method static:
+    public static long sum(int[] arr, int k) { ... }
+    System.out.println(sum(arr, k));
+
+2. Keep it non-static but call via object:
+    SLIDINGWINDOWBASICS obj = new SLIDINGWINDOWBASICS();
+    System.out.println(obj.sum(arr, k));
