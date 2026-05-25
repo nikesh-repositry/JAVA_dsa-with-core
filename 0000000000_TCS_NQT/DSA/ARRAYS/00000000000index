@@ -1,1 +1,16 @@
 
+ARRAYS PATTERNS----------------------------------
+---------------TWO POINTERS=
+Q1===// two sum leetcode 1 // === find two digits in array which sum is equal to the target
+Q2===// two sum 2 leetcode 167 // === find two digits in sorted array which sum is equal to the target
+Q3===// implement remove duplicate leetcode 26 // === remove duplicates from sorted array and return new length
+Q4===// implement 3 sum leetcode 15 // === find all unique triplets in array which sum is equal to zero
+Q5===// implement 3sum closest leetcode 16 // === find triplet in array whose sum is closest to target
+Q6===// move 0 and 1 without sorting method // === rearrange array so all 0s come before 1s
+Q7===// implement move 0 1 2 dutch national flag // === rearrange array so 0s,1s,2s are grouped in order
+Q8===NO CODE TILL NOW // === problem not defined yet
+
+---------------SLIDING WINDOW=
+Q9====// Maximum Sum Subarray of Size K (Fixed Window) SLIDING WINDOW // === find maximum sum of any contiguous subarray of length k
+Q10===// 2461. Maximum Sum of Distinct Subarrays With Length K // === find maximum sum of subarray of length k with all distinct elements
+Q11===// 209. Minimum Size Subarray Sum // === find smallest length subarray whose sum is at least target
