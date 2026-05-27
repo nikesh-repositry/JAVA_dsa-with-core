@@ -19,7 +19,7 @@ TCS NQT utilizes a single integrated adaptive test pattern where your performanc
 ### 🟥 TIER 1: HIGHEST PRIORITY (Maximum Weightage & High ROI)
 These topics appear in the highest volumes (typically 2-3 questions each). Mastering these shortcuts allows you to comfortably crack them in under 45-60 seconds.
 
-1. **Data Interpretation**
+1. **Data Interpretation** (https://github.com/nikesh-repositry/JAVA_dsa-with-core/blob/main/0000000000_TCS_NQT/NON-DSA/NUMERICAL_ABILITY/data_interpretation.pdf)
    - Subtopics: Tabular Data, Graphical Data, Pie Charts
    - Weightage: Very High (3-4 Questions)
    - Solvability in 60 Sec: Easy to Moderate (45 - 75 seconds)
