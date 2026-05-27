@@ -1,0 +1,128 @@
+================================================================================
+TCS NQT PROGRAMMING & TECHNICAL CONCEPTS BLUEPRINT
+Prepared by: TCS Senior Tester (10+ Years Experience)
+Target Time-per-Question: 30 - 45 Seconds Benchmark (Pure Knowledge/Logic Marks)
+================================================================================
+
+TCS NQT includes an extensive set of questions checking core programming principles,
+Data Structures, Algorithms, DBMS, Operating Systems, Networking, Software Engineering,
+System Design, and emerging tech stacks. 
+
+THE PRIMARY CHALLENGE: These questions test precise conceptual boundaries. You either 
+know the mechanism or you do not. Because there are no lengthy calculations like 
+Quantitative Aptitude, you must solve these in under 30-40 seconds to bank valuable 
+time for the rest of your adaptive test framework.
+
+--------------------------------------------------------------------------------
+🟥 TIER 1: CORE LANGUAGE MECHANICS & OBJECT-ORIENTED PROGRAMMING (OOP)
+--------------------------------------------------------------------------------
+Guaranteed questions. Focuses on OOP pillars, language-specific executions (Java, 
+Python, JavaScript), memory syntax, and evaluation conventions.
+
+1. Pillars of OOP
+   - Core Concepts: Encapsulation (hiding implementation details via data bundling),
+     Abstraction (showing necessary features while hiding complexity), Inheritance 
+     (acquiring parent properties), Polymorphism (entities taking multiple forms).
+   - Java Specifics: Interfaces (completely abstract blueprints with abstract methods), 
+     Abstract classes (can contain both abstract and concrete methods), Constructors 
+     (object initialization), Method Overloading (same name, different parameters), 
+     'final' keyword constraints, Static variables (shared across all instances), 
+     Packages (namespaces organizing classes).
+   - 60s Solvability: Extremely Easy (15 - 30 seconds).
+
+2. Scripting & Language Dynamics (Python & JavaScript Foundations)
+   - Core Concepts: Python operators (// for floor division dropping decimals), 
+     List (mutable) vs Tuple (immutable) structures, Lambda (anonymous expressions). 
+     JavaScript runtime mechanics (Hoisting, Closures giving access to outer scopes, 
+     Promises representing async completion, Document Object Model / DOM tree interfaces), 
+     String Immutability conventions, reference comparison (==) vs content evaluation (.equals()).
+   - 60s Solvability: Easy (25 - 45 seconds).
+
+--------------------------------------------------------------------------------
+🟨 TIER 2: DATA STRUCTURES & ALGORITHMIC PARADIGMS (The Advanced Screeners)
+--------------------------------------------------------------------------------
+Directly influences your evaluation for Digital and Prime profiles. Tests your memory of 
+complexities, traversal structures, and spatial memory trade-offs.
+
+3. Data Structure Architectures
+   - Linear Structures: Arrays (constant O(1) time indexing access), Stacks (LIFO principle), 
+     Queues (FIFO principle used in BFS configurations), Linked Lists (constant O(1) time insertion 
+     at the beginning, non-existence of a 'Binary Linked List'). Hash Tables (Hash collisions when 
+     keys map to identical hashes, HashMap structural pairs).
+   - Non-Linear Structures: Binary Trees (Preorder traversal: Root -> Left -> Right), Complete Binary 
+     Trees (all levels filled left-to-right), skewed trees (worst-case height of n nodes).
+   - 60s Solvability: Moderate (35 - 55 seconds).
+
+4. Sorting, Searching & Algorithm Design
+   - Search & Traversal: Linear Search (O(n) worst case), Binary Search (O(log n), strictly requires sorted data), 
+     Breadth-First Search (uses Queues), Depth-First Search.
+   - Sorting Complexities: Quick Sort (fastest on average O(n log n)), Merge Sort (stable sorting via divide-and-conquer). 
+     Bubble, Selection, and Insertion sort mechanics.
+   - Design Frameworks: Recursion (functions calling themselves, requiring a base case to prevent stack overflow), 
+     Recursive Factorial space complexity (O(n) call stack), Dynamic Programming (solving overlapping subproblems), 
+     Memoization (storing expensive call results), Greedy Approach (Dijkstra's shortest path, Kruskal's MST), 
+     Backtracking (undoing choices when paths fail, Tower of Hanoi solutions).
+   - 60s Solvability: Moderate to Hard (45 - 65 seconds).
+
+--------------------------------------------------------------------------------
+🟦 TIER 3: RELATIONAL DATABASES (DBMS) & SYSTEM DESIGN FOUNDATIONS
+--------------------------------------------------------------------------------
+Highly structured questions checking data organization patterns and scalable corporate application layouts.
+
+5. Database Management Systems (DBMS) & SQL
+   - Syntax & Rules: SQL (Structured Query Language), DDL (CREATE, ALTER, DROP) vs DML (INSERT), 
+     SELECT for retrieval, WHERE vs HAVING clause filtering.
+   - Architecture: RDBMS systems, Primary Keys (unique identification), UNIQUE constraints, 
+     FULL OUTER JOIN (matching records across either table), Normalization (reducing redundancy), 
+     INDEX utilization (speeding up queries), Transactions (sequences executed as a single logical unit).
+   - 60s Solvability: Easy (30 - 45 seconds).
+
+6. System Design Architecture Basics
+   - Routing & Distribution: Load balancing (workload distribution across systems), CDN (geographically 
+     distributed content delivery networks), Message Queues (asynchronous communication between separate microservices).
+   - Scalability Metrics: Horizontal scaling (adding more machines/scaling out), Vertical scaling (adding power 
+     to an existing machine/scaling up), Database Sharding (partitioning data tables across distinct servers), 
+     Eventual Consistency, Stateless Architecture layout (servers retaining zero client state between requests).
+   - 60s Solvability: Moderate (40 - 60 seconds).
+
+--------------------------------------------------------------------------------
+⬛ TIER 4: SOFTWARE ENGINEERING, NETWORKING, CYBERSECURITY & CORE DOMAINS
+--------------------------------------------------------------------------------
+Tests execution pipelines, deployment architectures, protocol handshakes, and baseline terminology.
+
+7. Software Engineering & Agile Methodology
+   - Frameworks: SDLC (Waterfall sequential model vs Agile/Scrum flexible sprint iterations). 
+     Project metrics (User stories, acceptance criteria conditions, sprint retrospectives, burndown charts tracking work).
+   - Git Workflows: Version control tracking (Git distributed engine, GitHub hosting platform).
+   - Testing Disciplines: Unit testing (individual component validation), Integration testing (combined module checks), 
+     Regression testing (re-testing to ensure existing code didn't break), Black Box testing (functional assessment 
+     without inside structural access), TDD (Test-Driven Development), Code Coverage metrics, Refactoring (restructuring 
+     code without modifying external runtime outcomes), Technical Debt (future rework cost from quick hacks), Pair Programming.
+   - 60s Solvability: Easy (30 - 50 seconds).
+
+8. Computer Networks & Core Infrastructure
+   - Protocols & Systems: IP (Internet Protocol), DNS (Domain Name System), LAN (Local Area Network), FTP, HTTP (port 80), 
+     HTTPS (secure port 443 via SSL/TLS), SMTP (sending emails), bandwidth capabilities (data volume transfer speed).
+   - OSI Layers & Hardware: OSI Layer 2 (Data Link - Switches operate here, unique physical MAC addressing), 
+     OSI Layer 3 (Network - Routers operate here, handles IP routing paths), Subnet masks (separating network/host parts), 
+     Class A private ranges (10.0.0.0 to 10.255.255.255).
+   - 60s Solvability: Easy to Moderate (35 - 55 seconds).
+
+9. Operating Systems (OS) & Logic Fundamentals
+   - Core Mechanics: OS operations (Memory, Process, File management), Deadlocks (infinite waiting loops for mutual resources), 
+     FCFS (non-preemptive scheduling), Virtual Memory (extending RAM via disk allocation), Thrashing (excessive page faulting loops), 
+     Linux commands (`ps` for process tracking), Semaphores (synchronization blocks), Cache Memory (fastest local hierarchy access), 
+     Multi-user OS environments (Linux), Context Switching (saving and restoring state vectors).
+   - Hardware Fundamentals: CPU structures, volatile vs non-volatile storage (RAM vs ROM/Hard Disks), 
+     Bit systems (8 bits = 1 byte), base systems (Hexadecimal base-16), firmware ROM chips, 
+     logic gates (AND gate tracking), clock speed evaluations (Hertz), compilation vs interpretation pipelines, 
+     error states (Syntax structure errors, Runtime execution exceptions, Logical incorrect calculation outcomes), 
+     Pseudocode descriptions, Flowcharts (Ovals for terminal boundaries, Diamonds for conditional logic blocks), Debugging setups.
+   - Modern Tech Stacks: Big data ecosystems, Blockchain ledgers, IoT devices, DevOps cultures, Docker containers, Microservices.
+   - Cybersecurity: Encryption ciphers, Firewalls, Phishing hooks, Malware & Ransomware payloads, Two-Factor Authentication (2FA), 
+     DDoS service floods, injection vulnerabilities (SQL Injection, Cross-Site Scripting / XSS, Cross-Site Request Forgery / CSRF), OAuth tokens, JWT.
+   - AI & Machine Learning: Supervised learning (Linear Regression), Unsupervised tools (Clustering/K-Means), Overfitting pitfalls 
+     (high training data score, poor generalization), Neural networks (modeled on human brain), Deep Learning, NLP, Computer Vision.
+   - 60s Solvability: Moderate (40 - 60 seconds).
+
+================================================================================
