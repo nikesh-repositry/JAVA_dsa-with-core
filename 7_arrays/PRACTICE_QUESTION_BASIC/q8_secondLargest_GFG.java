@@ -17,7 +17,7 @@ public class q8_secondLargest_GFG{
             }
         }
         if(max1==Integer.MIN_VALUE && max2==Integer.MIN_VALUE) System.out.println("array is empty");
-        else if (max2==Integer.MIN_VALUE) System.out.println("all values are equal or only one element in array");
+        if (max2==Integer.MIN_VALUE) System.out.println("all values are equal or only one element in array");
         else System.out.println(max2 +" is second maximum");
     }
 }
