@@ -1,4 +1,4 @@
-//count number of occurance of each digits
+//count number of occurance of each digits 
 package HASHING;
 import java.util.*;
 public class Q003 {
