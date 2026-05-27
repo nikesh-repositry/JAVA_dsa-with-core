@@ -1,0 +1,160 @@
+================================================================================
+TCS NQT NUMERICAL ABILITY EXAM BLUEPRINT & TOPIC PRIORITY
+Prepared by: TCS Senior Tester (10+ Years Experience)
+Target Time-per-Question: 60 Seconds Benchmark
+================================================================================
+
+TCS NQT utilizes a single integrated adaptive test pattern where your performance 
+dictates whether you qualify for the Ninja, Digital, or Prime job profile. 
+
+THE PRIMARY CHALLENGE: You cannot switch back to previous questions once you hit 
+'Next' (Question Locking). Time allocation and rapid topic-spotting are everything.
+The Foundation Numerical Ability section typically features 20 to 26 questions 
+to be solved in 40 minutes.
+
+--------------------------------------------------------------------------------
+🟥 TIER 1: HIGHEST PRIORITY (Maximum Weightage & High ROI)
+--------------------------------------------------------------------------------
+These topics appear in the highest volumes (typically 2-3 questions each). 
+Mastering these shortcuts allows you to comfortably crack them in under 45-60 seconds.
+
+1. Data Interpretation
+   - Subtopics: Tabular Data, Graphical Data, Pie Charts
+   - Weightage: Very High (3-4 Questions)
+   - Solvability in 60 Sec: Easy to Moderate (45 - 75 seconds)
+   - TCS Internal Insight / Trap to Avoid: TCS provides massive, intimidating calculation 
+     sets. Do not calculate exact values. Master percentage approximations and 
+     option elimination to stay under 60 seconds.
+
+2. Arithmetic: Percentages, Profit & Loss
+   - Subtopics: Successive percentage change, Marked Price & Discounts
+   - Weightage: High (2-3 Questions)
+   - Solvability in 60 Sec: Easy (30 - 50 seconds)
+   - The Shortcut: Avoid using the traditional equation-based 'x' method. Use 
+     fraction conversion (e.g., 20% = 1/5, 16.66% = 1/6) to solve mentally.
+
+3. Work and Time
+   - Subtopics: Mandays (M1*D1*H1/W1 = M2*D2*H2/W2), Individual Efficiencies, Pipes & Cisterns
+   - Weightage: High (2 Questions)
+   - Solvability in 60 Sec: Easy (40 - 50 seconds)
+   - The Shortcut: Never use classic fraction additions (1/x + 1/y). Use the 
+     Total Work LCM Method. It drops solve times down to 30 seconds.
+
+4. Ratios and Proportion
+   - Subtopics: Income/Expenditure ratios, Partnerships
+   - Weightage: High (1-2 Questions)
+   - Solvability in 60 Sec: Easy (30 - 45 seconds)
+   - The Shortcut: Directly substitute the options into the ratio values. If a 
+     ratio demands a multiple of 7, check the options for multiples of 7 first 
+     before solving.
+
+--------------------------------------------------------------------------------
+🟨 TIER 2: HIGH WEIGHTAGE BUT TIME-CONSUMING (The 60-Second Edge)
+--------------------------------------------------------------------------------
+These topics are guaranteed to show up, but they are conceptually heavier. With 
+proper training, they can be tamed to fit our 60-second rule.
+
+5. Number System
+   - Subtopics: Divisibility Rules, Numbers and Decimal Fractions, HCF & LCM
+   - Weightage: High (2-3 Questions)
+   - Solvability in 60 Sec: Moderate (50 - 70 seconds)
+   - TCS Internal Insight / Trap to Avoid: TCS likes huge numbers. Rely heavily on 
+     unit digit analysis, last two digits, and divisibility constraints (especially 
+     rules for 7, 11, 13, and 19) instead of complete long division.
+
+6. Distance, Speed and Time
+   - Subtopics: Trains crossing, Relative Speed, Average Speed
+   - Weightage: Moderate to High (1-2 Questions)
+   - Solvability in 60 Sec: Moderate (60 - 80 seconds)
+   - TCS Internal Insight / Trap to Avoid: Avoid unit conversion errors (km/hr to m/s). 
+     Use the proportional method: If speed is constant, Distance is proportional to Time. 
+     This stops you from writing messy equations.
+
+7. Arithmetic: Averages & Ages
+   - Subtopics: Weighted Averages, Age ratios over time
+   - Weightage: Moderate (1-2 Questions)
+   - Solvability in 60 Sec: Easy to Moderate (40 - 60 seconds)
+   - The Shortcut: For averages, use the deviation method from an assumed mean 
+     rather than calculating the absolute sum of large numbers.
+
+8. Allegations and Mixtures
+   - Subtopics: Milk-water replacements, Weighted balance
+   - Weightage: Moderate (1 Question)
+   - Solvability in 60 Sec: Moderate (50 - 60 seconds)
+   - The Strategy: This is a meta-topic. Master the cross-multiplication allegory 
+     diagram because it can also be used to solve complex average and profit/loss 
+     questions in under 40 seconds.
+
+--------------------------------------------------------------------------------
+🟦 TIER 3: MODERATE WEIGHTAGE & FORMULA HEAVY
+--------------------------------------------------------------------------------
+These topics require explicit formulas. If you know the formula, they take 30 
+seconds. If you forget it, you will lose precious time.
+
+9. Elementary Statistics
+   - Subtopics: Mean, Median, Mode, Standard Deviation and Variance
+   - Weightage: Moderate (1-2 Questions)
+   - Solvability in 60 Sec: Easy (30 - 50 seconds)
+   - The Strategy: High ROI because the math is simple addition/division. Remember 
+     the empirical formula: Mode = 3(Median) - 2(Mean).
+
+10. Simplifications & Calculations
+    - Subtopics: Simple Arithmetic Calculations, Approximations
+    - Weightage: Moderate (1-2 Questions)
+    - Solvability in 60 Sec: Easy (40 - 60 seconds)
+    - The Rules: Strictly enforce BODMAS/VBODMAS. TCS adds nested brackets to 
+      test your nerve under pressure. Use digital scratchpads cleanly.
+
+11. Mensuration & Geometry
+    - Subtopics: Geometry, Shapes, Area & Perimeter, Volume
+    - Weightage: Moderate (1 Question)
+    - Solvability in 60 Sec: Moderate to Hard (60 - 90 seconds)
+    - The Strategy: Focus heavily on circles, cylinders, and spheres. If finding 
+      an area/volume involves Pi, check if options are divisible by 11.
+
+12. Series and Progressions
+    - Subtopics: Arithmetic Progression (AP), Geometric Progression (GP)
+    - Weightage: Moderate (1 Question)
+    - Solvability in 60 Sec: Moderate (50 - 70 seconds)
+    - The Trap: Trying to manually calculate terms. Memorize nth term formulas 
+      and sum of series formulas to keep calculations programmatic.
+
+--------------------------------------------------------------------------------
+⬛ TIER 4: CONCEPTUAL & ADVANCED (Save for Last or Advanced Section)
+--------------------------------------------------------------------------------
+Low question frequency in the Foundation tier, but heavily featured in the 
+Advanced Quantitative section for Digital/Prime roles.
+
+13. Permutations & Combinations
+    - Subtopics: Arrangements, Selections
+    - Weightage: Low (0-1 Question in Foundation)
+    - Solvability in 60 Sec: Hard (70 - 90 seconds)
+    - The Strategy: Focus purely on linear arrangements with constraints 
+      (e.g., "vowels sitting together"). Avoid deeply complex grid problems.
+
+14. Probability
+    - Subtopics: Coin/Dice/Cards problems, Conditional Probability
+    - Weightage: Low (0-1 Question in Foundation)
+    - Solvability in 60 Sec: Hard (60 - 90 seconds)
+    - The Concept: Usually asked in tandem with P&C. Focus heavily on standard 
+      card decks and dice-rolling shortcuts.
+
+15. Clocks and Calendar
+    - Subtopics: Angle between hands, Odd days mapping
+    - Weightage: Low (0-1 Question)
+    - Solvability in 60 Sec: Moderate to Hard (60 - 80 seconds)
+    - The Shortcut: For clocks, use the standard formula for angle Theta:
+      Theta = | 30*H - (11/2)*M |
+
+16. Equations
+    - Subtopics: Linear & Quadratic equations
+    - Weightage: Low (0-1 Question)
+    - Solvability in 60 Sec: Easy (40 - 60 seconds)
+    - The Shortcut: Never solve the quadratic equation manually. Use the sum of 
+      roots (-b/a) and product of roots (c/a) or just back-substitute options.
+
+================================================================================
+NEXT STEP FOR PREPARATION:
+We will target Tier 1 first to build speed and clear the basic cutoffs cleanly. 
+Let me know which specific topic from Tier 1 you want to tackle first!
+================================================================================
