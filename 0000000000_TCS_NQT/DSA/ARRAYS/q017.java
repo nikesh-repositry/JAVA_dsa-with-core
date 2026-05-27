@@ -1,4 +1,5 @@
 // Problem Statement: Rearrange a given array such that the first half is arranged in increasing order, and the second half is arranged in decreasing order
+//print frequency of all elements
 package ARRAYS;
 import java.util.Arrays;
 import java.util.Scanner;
