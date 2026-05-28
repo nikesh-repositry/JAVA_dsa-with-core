@@ -15,4 +15,4 @@ The year is a leap year if either:
 
 Divisible by 400, or
 
-Divisible by 4 but not divisible by 100.*/
+Divisible by 4 but not divisible by 100.*/ 
