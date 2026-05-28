@@ -103,6 +103,3 @@ These check spatial perception and raw structural observation.
 
 ---
 
-### NEXT STEP FOR REASONING PREPARATION:
-Now that you have all three blueprints fully mapped, we can kick off active practice. 
-**Do you want to crack Tier 1 Coding-Decoding speed-hacks first, or start with one of the Quantitative modules?**
