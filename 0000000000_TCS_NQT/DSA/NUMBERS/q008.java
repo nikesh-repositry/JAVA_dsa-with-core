@@ -10,3 +10,9 @@ public class q6 {
         }
     }
 }
+/*
+The year is a leap year if either:
+
+Divisible by 400, or
+
+Divisible by 4 but not divisible by 100.*/
