@@ -113,7 +113,4 @@ if you do not, eliminate what you can and move on.
       and polite modal usage ('Would you mind', 'Kindly ensure') for formal options.
 
 ================================================================================
-NEXT STEP FOR VERBAL PREPARATION:
-Grammar rules are pure, free marks that build a solid base. Would you like to start
-by cracking the Top 10 Subject-Verb Agreement traps that TCS sets up every year?
-================================================================================
+
