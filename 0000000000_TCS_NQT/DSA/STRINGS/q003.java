@@ -1,5 +1,5 @@
 package STRINGS;
-//find ascii code of char
+//find ascii code of char and string
 public class q3 {
     public static void main(String[] args) {
         char c = 'e';
