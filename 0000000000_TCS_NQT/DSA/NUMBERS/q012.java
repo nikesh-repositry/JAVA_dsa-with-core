@@ -3,7 +3,7 @@ package NUMBERS;
 import java.util.ArrayList;
 import java.util.Collections;
 public class q9 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         int n = 9;
         ArrayList<Integer> fac = new ArrayList<>();
         for(int i=1;i<=Math.sqrt(n);i++){
