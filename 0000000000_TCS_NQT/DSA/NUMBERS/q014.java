@@ -1,5 +1,6 @@
 //strong number
 package NUMBERS;
+ // 1! + 4! + 5! = 145. Hence 145 is a strong number. 
 
 import java.util.Scanner;
 
