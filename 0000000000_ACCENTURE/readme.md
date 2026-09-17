@@ -1,1 +1,1 @@
-
+** SYLLABUS AND PATTERN **
