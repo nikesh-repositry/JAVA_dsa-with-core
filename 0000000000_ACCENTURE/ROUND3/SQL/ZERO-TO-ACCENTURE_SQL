@@ -1,0 +1,388 @@
+============================================================BASIC
+SQL (STRUCTURED QUERY LANGUAGE)
+SQL IS A PROGRAMMING LANGUAGE USED TO INTERACT WITH RELATIONAL DATABASE
+MYSQL WORKBENCH FOR SQL QUERIES PRACTICE
+TYPES OF DATABASE 1. RELATIONAL 2. NON-RELATIONAL
+
+
+
+============================================================ACCENTURE 
+ACCENTURE GENERALLY ASKED JOINS QUERY THAN ANY OTHER 
+FOCUS ON JOINS, SUB-QUERIES 
+MUST KNOW THE USE OF WHERE AND HAVING WITH AGGREGATE 
+YOU WILL BE GIVEN SCHEMA OF TABLES LIKE 3-8 TABLES AND YOU HAVE TO PERFORM THE GIVEN TASK
+MUST KNOW THAT WHILE GIVING TEST ONLY PRACTICE GETS REMEMBER THAT IS YOU MAY FORGET SYNTAX, FUNC NAME, ORDER SO DO PRACTICE 
+MAINLY PRACTICE FROM PVQ AND RECENTLY ASKED ALONG WITH SIMILAR QUESTIONS MOST HELPFUL
+
+
+
+=============================================================CRUD
+CRUD VERY COMMON AND BASIC QUERY TO KNOW ABOUT
+CREATE
+READ
+UPDATE
+DELETE
+LATER EXPRESSED HERE
+
+
+
+=============================================================CREATING DATABASE  //database is the stuff which consist of all the tuples
+CREATE DATABSE database_name;
+
+
+
+=============================================================DROPPING DATABASE
+DROP DATABASE database_name;
+
+
+
+=============================================================COMMON COMMANDS
+SHOW DATABASE;          //list all databases available on the server
+SHOW TABLES;            //displays all the tables inside the currently selected database
+USE db_name;            //switches the active database context to db_name i mean this command used to select database which you want to work on
+SELECT * FROM db_name;  //retrieves all rows and columns from a table named db_name
+NOTE: SHOW DATABASES, SHOW TABLES are metadata commands while USE and SELECT are data access commands
+
+
+
+=============================================================CREATE TABLE
+USE database_name;                    //the table i want to create inside this specific database so i write this also no only create command before any command typed i must specifiy which database to use
+CREATE TABLE table_name(
+    column1_name DATATYPE CONSTRAINT,
+    column2_name DATATYPE CONSTRAINT,
+    column3_name DATATYPE CONSTRAINT
+);
+example
+USE school_db;  -- Switch to the database where you want the table created.
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,          -- Unique ID for each student
+    first_name VARCHAR(50) NOT NULL,     -- Student's first name
+    last_name VARCHAR(50) NOT NULL,      -- Student's last name
+    date_of_birth DATE,                  -- Date of birth
+    email VARCHAR(100) UNIQUE,           -- Email must be unique
+    phone_number VARCHAR(15),            -- Optional contact number
+    enrollment_date DATE DEFAULT CURRENT_DATE  -- Auto‑set when record is created
+);
+
+
+
+
+============================================================DATATYPE
+there are many datatype in sql
+this define the type of values that can be stored in a column 
+mainly used datatypes are
+-CHAR
+-VARCHAR
+-INT
+whole table of datatype  //JUST REMEMBER THE MOSTLY ASKED DATATYPE IN ACCENTURE AND IGNORE LEFT ONCE
+-- Numeric Types
+INT / INTEGER        → Whole numbers
+SMALLINT             → Small range whole numbers
+BIGINT               → Very large whole numbers
+DECIMAL(p,s) / NUMERIC(p,s) → Fixed precision numbers (p = total digits, s = scale)
+FLOAT / REAL         → Approximate floating-point numbers
+DOUBLE PRECISION     → Higher precision floating-point numbers
+
+-- Character/String Types
+CHAR(n)              → Fixed-length string (pads with spaces)
+VARCHAR(n)           → Variable-length string (up to n characters)
+TEXT                 → Large variable-length string
+
+-- Date & Time Types
+DATE                 → Stores year, month, day
+TIME                 → Stores hour, minute, second
+DATETIME             → Stores date + time
+TIMESTAMP            → Stores date + time (often with timezone)
+YEAR                 → Stores year value
+
+-- Boolean Type
+BOOLEAN              → TRUE / FALSE values
+
+-- Binary Types
+BINARY(n)            → Fixed-length binary data
+VARBINARY(n)         → Variable-length binary data
+BLOB                 → Large binary objects (images, files)
+
+-- Other Common Types
+ENUM                 → String object with predefined values
+SET                  → String object with multiple predefined values
+JSON                 → Stores JSON formatted data
+XML                  → Stores XML formatted data
+
+
+
+===============================================================SINGNED AND UNSIGNED
+-- SIGNED
+Means the numeric column can store both positive and negative values.
+Default behavior if you don’t specify UNSIGNED.
+Example:
+CREATE TABLE accounts (
+    balance INT SIGNED
+);
+INSERT INTO accounts VALUES (-500);   -- valid
+INSERT INTO accounts VALUES (1000);   -- valid
+
+-- UNSIGNED
+Means the numeric column can store only non-negative values (0 and positive).
+Extends the positive range because negatives are not allowed.
+Example:
+CREATE TABLE inventory (
+    quantity INT UNSIGNED
+);
+INSERT INTO inventory VALUES (50);    -- valid
+INSERT INTO inventory VALUES (0);     -- valid
+INSERT INTO inventory VALUES (-10);   -- ERROR (negative not allowed)
+
+-- Why use UNSIGNED?
+When you know values will never be negative (like IDs, counts, quantities, prices).
+It doubles the positive range compared to SIGNED.
+
+
+
+==============================================================TYPES OF SQL COMMANDS
+DDL DATA DEFINITION LANGUAGE  CREATE, ALTER, RENAME, TRUNCATE& DROP
+DQL DATA QUERY LANGUAGE  SELECT
+DML DATA MANIPULATION LANGUAGE  SELECT, INSERT, UPDATE & DELETE
+DCL DATA CONTROL LANGUAGE  GRANT & REVOKE 
+TCL TRANSACTION CONTROL LANGUAGE  COMMIT, ROLLBACK
+
+
+
+==============================================================EXISTS KEYWORD
+EXISTS  used to filter rows where a related record exists
+NOT EXISTS  used to filter rows where a related record does not exist
+both are used for safety matter not necessary but it is a good practice to use them
+
+-- EXISTS
+Checks if a subquery returns at least one row.
+If TRUE, the outer query executes.
+Example:
+SELECT student_id, first_name
+FROM student s
+WHERE EXISTS (
+    SELECT 1
+    FROM enrollment e
+    WHERE e.student_id = s.student_id
+);
+-- Returns students who have at least one enrollment record.
+DROP DATABASE IF EXISTS school_db;
+
+-- NOT EXISTS
+Checks if a subquery returns no rows.
+If TRUE, the outer query executes.
+Example:
+SELECT student_id, first_name
+FROM student s
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM enrollment e
+    WHERE e.student_id = s.student_id
+);
+-- Returns students who have no enrollment record.
+CREATE DATABASE IF NOT EXISTS school_db;
+
+
+
+=================================================================INSERT COMMAND
+INSERT COMMAND IS USED TO INSERT VALUE INTO THE TABLE
+TWO WAYS TO INSERT
+1. Single row → insert one complete record.
+2. Specific columns → insert into chosen columns only.
+3. Multiple rows → insert many records in one go.
+example
+
+-- 1. Insert a single row (all columns)
+Syntax:
+INSERT INTO table_name VALUES (value1, value2, value3, ...);
+Example:
+INSERT INTO student VALUES (1, 'Rahul', 20, 'A');
+
+-- 2. Insert a single row into specific columns
+Syntax:
+INSERT INTO table_name (col1, col2, col3) VALUES (value1, value2, value3);
+Example:
+INSERT INTO student (student_id, name, grade) VALUES (2, 'Priya', 'B');
+
+-- 3. Insert multiple rows at once
+Syntax:
+INSERT INTO table_name (col1, col2, col3, ...) VALUES
+(value1, value2, value3, ...),
+(value1, value2, value3, ...),
+(value1, value2, value3, ...);
+Example:
+INSERT INTO student (student_id, name, age, grade) VALUES
+(3, 'Nikesh', 22, 'A+'),
+(4, 'Anita', 21, 'B+'),
+(5, 'Ravi', 23, 'A');
+
+=column order matters if you do not specify column names
+=default values are used if you skip a column
+=if a column allows NUll, you can omit it
+
+
+=====================================================================KEYS
+Keys are special columns (or sets of columns) used to uniquely identify rows
+and define relationships between tables. They ensure data integrity and prevent duplicates.
+
+-- Types of Keys
+1. PRIMARY KEY (main identifier for rows)
+   → Uniquely identifies each row in a table.
+   → No NULLs, only one per table.
+
+2. FOREIGN KEY (enforces relationships)
+   → References the PRIMARY KEY of another table.
+   → Enforces relationships between tables.
+ 
+3. UNIQUE KEY (prevents duplication)
+   → Ensures all values in a column are unique.
+   → Allows NULLs (depends on DBMS).
+
+4. CANDIDATE KEY (potential primary key)
+   → Any column(s) that can uniquely identify a row.
+   → One becomes the PRIMARY KEY.
+
+5. ALTERNATE KEY (backup identifier)
+   → Candidate keys not chosen as PRIMARY KEY.
+   → Still uniquely identify rows.
+
+6. SUPER KEY (any unique column set)
+   → Any set of columns that can uniquely identify a row.
+   → May include extra attributes.
+
+7. COMPOSITE KEY (combines multiple columns)
+   → Combination of two or more columns to uniquely identify a row.
+   → Used when no single column is unique enough.
+
+
+
+===========================================================================PRIMARY & FORIEGN KEY
+1. Imagine you have a student table with student IDs.
+2. You also have a library table that records which student borrowed which book.
+3. The library table needs to know which student each record belongs to.
+4. Instead of writing the student name every time, we just store their student ID.
+
+-- Create Students table
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+-- Create Library table
+CREATE TABLE Library (
+    borrowed_id INT PRIMARY KEY,
+    book_title VARCHAR(100),
+    student_id INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)->//this student_id in library must matches the student_id in students
+);             //studend_id this name could be anything 
+
+-- What Foreign Key does
+1. Ensure validity → you can’t insert a library record with student_id = 99 if no student with ID 99 exists.
+2. Maintain relationships → every borrowed book is tied to a real student.
+3. Prevent orphan data → no meaningless records floating around without a matching student.
+
+-- Extra Points (good practice)
+✔ PRIMARY KEY cannot be NULL.
+✔ Only one PRIMARY KEY per table.
+✔ FOREIGN KEY can be multiple in a table.
+✔ Always define PRIMARY KEY first, then FOREIGN KEY for relationships.
+✔ PRIMARY KEY = "original identity card" in the main table.
+✔ FOREIGN KEY = "reference copy" in another table pointing back to that identity.
+
+
+
+======================================================================CONSTRAINTS
+SQL CONSTAINTS ARE USED TO SPECIFY RULES FOR DATA IN A TABLE
+
+-- 1. NOT NULL
+ENSURES A COLUMN CANNOT HAVE NULL VALUES
+CREATE TABLE Students (
+    student_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL
+);
+
+-- 2. UNIQUE
+GUARANTEE ALL VALUES IN A COLUMN ARE DISTINCT
+CREATE TABLE Students (
+    email VARCHAR(100) UNIQUE
+);
+-- No two students can share the same email.
+
+-- 3. PRIMARY KEY
+COMBINATION OF NOT NULL AND UNIQUE 
+IDENTIFIES ROW UNIQUELY
+ONLY ONE PRIMARY KEY PER TABLE
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+-- Unique + Not Null, main identifier.
+
+-- 4. FOREIGN KEY
+LINKS ONE TABLE TO ANOTHER
+ENFORCES REFERENTIAL INTEGRITY (CHILD ROWS MUST MATCH PARENT ROWS)
+CREATE TABLE Library (
+    borrowed_id INT PRIMARY KEY,
+    book_title VARCHAR(100),
+    student_id INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+-- Links Library table to Students table.
+
+-- 5. CHECK
+ENSURES VALUES MEEET A CONDITION
+CREATE TABLE Students (
+    age INT CHECK (age >= 18)
+);
+-- Only students aged 18 or above allowed.
+
+-- 6. DEFAULT
+ASSIGN A DEFAULT VALUE IF NONE IS PROVIDED
+CREATE TABLE Students (
+    status VARCHAR(20) DEFAULT 'Active'
+);
+-- If no status given, defaults to "Active".
+
+-- 7. AUTO INCREMENT / IDENTITY
+AUTOMATICALLY  GENERATES SEQUENTIAL VALUES FOR A COLUMN(USUALLY PRIMARY KEY)
+-- MySQL style
+CREATE TABLE Students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50)
+);
+-- SQL Server style
+CREATE TABLE Students (
+    student_id INT IDENTITY(1,1) PRIMARY KEY,
+    name VARCHAR(50)
+);
+-- Automatically generates sequential IDs.
+
+
+
+==================================================================SELECT COMMAND
+USE TO SELECT ANY DATA FROM THE DATASET
+BASIC 
+SELECT col1,col2 FROM table_name;
+TO SELECT ALL
+SELECT * FROM table_name;
+
+
+
+==================================================================WHERE CLAUSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
