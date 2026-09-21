@@ -367,6 +367,423 @@ SELECT * FROM table_name;
 
 
 ==================================================================WHERE CLAUSE
+WHERE IS USED TO FILTER RECORDS
+IT RETURNS ONLY ROWS THAT MEET A GIVEN CONDITION
+SYNTAX::::::::
+SELECT col1, col2,...
+FROM table_name
+WHERE condition;
+example:::::::
+SELECT * FROM students
+WHERE age IS NULL;
+
+
+
+==================================================================OPERATORS
+-- 1. Arithmetic Operators
++  Addition
+-  Subtraction
+*  Multiplication
+/  Division
+%  Modulus (remainder)
+Example:
+SELECT 10 + 5 AS Sum,
+       10 - 5 AS Difference,
+       10 * 5 AS Product,
+       10 / 5 AS Division,
+       10 % 3 AS Remainder;
+SELECT * FROM Students
+WHERE (salary / 2) > 20000;
+-- Definition: Perform basic math operations on numeric values.
+
+
+-- 2. Comparison Operators
+=   Equal to
+<>  Not equal to
+!=  Not equal to (alternative)
+>   Greater than
+<   Less than
+>=  Greater than or equal to
+<=  Less than or equal to
+Example:
+SELECT * FROM Students
+WHERE age >= 18;
+-- Definition: Compare values and return TRUE/FALSE.
+
+
+-- 3. Logical Operators
+AND   Both conditions must be true
+OR    At least one condition true
+NOT   Negates a condition
+Example:
+SELECT * FROM Students
+WHERE age > 18 AND grade = 'A';
+-- Definition: Combine or negate conditions in WHERE clause.
+
+
+-- 4. Bitwise Operators (SQL Server / some DBMS)
+&   Bitwise AND
+|   Bitwise OR
+^   Bitwise XOR
+~   Bitwise NOT
+<<  Left shift
+>>  Right shift
+Example:
+SELECT 5 & 3 AS BitwiseAND,
+       5 | 3 AS BitwiseOR,
+       5 ^ 3 AS BitwiseXOR;
+SELECT * FROM Students
+WHERE (student_id | 2) = 3;
+-- Performs OR on bits, filters rows where result = 3.
+-- Definition: Perform operations on binary representation of integers.
+
+
+
+=====================================================================LIMIT
+SETS AN UPPER LIMIT ON NUMBER OF ROWS TO BE RETURNED 
+SYNTAX:
+SELECT col1, col2 FROM table_name
+LIMIT number;
+EXAMPLE:
+SELECT * FROM students LIMIT 5;
+NOTE: IN SQL SERVER, USE "TOP" INSTEAD OF "LIMIT"
+
+
+
+=====================================================================ORDER BY
+SORTS ROWS IN ASCENDING ASC OR DESCENDING DESC ORDER
+EXAMPLE:
+SELECT name, age 
+FROM students
+ORDER BY age DESC; //shows students sorted by age, oldest first
+TIP: can sort by multiple columns (eg. ORDER BY grade ASC, age DESC).
+
+
+
+==================================================================AGGREGATE FUNCTION
+AGGREGATE FUNCTION PERFORM A CALCULATION ON A SET OF VALUES & RETURN A SINGLE VALUE
+-COUNT() number of rows
+-SUM() total  of values
+-AVG() average value
+-MIN()/MAX() smallest/largest value
+EXAMPLE:
+SELECT AVG(age) AS avg_age FROM students; //return the average age of all students
+
+
+
+===============================================================GROUP BY
+ROWS THAT HAVE THE SAME VALUES INTO SUMMARY ROWS.
+IT COLLECTS DATA FROM MULTIPLE RECORDS & GROUPS THE RESULT BY ONE OR MORE COLUMN.
+GENERALLY WE USE GROUP BY WITH SOME AGGREGATE FUNC
+EXAMPLE:
+SELECT grade, COUNT(*) AS total
+FROM students
+GROUP BY grade;    //counts how many students are in each grade
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+okay so lets understand COUNT(*) AS total in above query
+but why it is so obivous simple
+yh but here nothing is specified just * 
+SO
+COUNT(*) means count all rows in each group, regardless of column values
+it does not care which column you pick, it simply counts every row that belongs to that group 
+but if i write COUNT(student_id) it counts non-NULL values in column
+but if i write COUNT(DISTINCT grade) it counts unique values, it counts unique values only
+
+
+==============================================================HAVING
+FILTER GROUP AFTER AGGREGATION (LIKE WHERE BUT FOR GROUPS)
+EXAMPLE:
+SELECT grade, AVG(age) AS avg_age
+FROM students
+GROUP BY grade
+HAVING AVG(age)>20;    //returns only grades where the average age is greater than 20
+
+
+
+
+======================================================================GENRAL ORDER
+SELECT grade, COUNT(*) AS total  //choose columns or expressions to display
+FROM students                    //specify the table to query
+WHERE age > 18                   //filter rows before grouping (condition)
+GROUP BY grade                   //group rows for aggregation
+HAVING COUNT(*) >= 2             //filter group after aggregation
+ORDER BY total DESC              //sort the result set
+LIMIT 5;                         //restrict number of rows returned
+
+
+
+====================================================================UPDATE
+used to modify existing records in a table
+SYNTAX:
+UPDATE table_name
+SET col1 = val1, col2=val2, ...
+WHERE condition;   //always use where to avoid updating all rows
+
+EXAMPLE:
+UPDATE students
+SET age=21
+WHERE student_id = 3;
++++++++++++++++++++++++++++++++++++++++SAFE MODE
+PREVENTS ACCIDENTAL UPDATE OR DELETE OF ALL ROWS WITHOUT A WHERE CLAUSE
+Safe Mode is a safety feature that forces you to use WHERE (or LIMIT) in UPDATE/DELETE to avoid mass changes.
+-IF SAFE MODE IS ON:
+ UPDATE students SET age = 21;   blocked (no  WHERE CLAUSE)
+-IF SAFE MODE IF OFF:
+ UPDATE students SET age = 21;   allowed, but updates every row
+
+HOW TO DISABLE(MYSQL WORKBENCH)
+EDIT->PREFERENCES->SQL EDITOR->UNCHECK "SAFE UPDATES"
+THEN  RECONNECT SESSION
+ALSO
+SET SQL_SAFE_UPDATES=1; // TURN ON SAFE MODE
+SET SQL_SAFE_UPDATES=0; // TURN OFF SAFE MODE
+
+
+
+=======================================================================DELETE
+DELETE IS USED TO REMOVE EXISTING ROWS FROM A TABLE
+-- Syntax
+DELETE FROM table_name
+WHERE condition;
+
+-- Example 1: Delete specific row
+DELETE FROM Students
+WHERE student_id = 3;
+-- Removes the student with ID = 3.
+
+-- Example 2: Delete multiple rows
+DELETE FROM Students
+WHERE grade = 'C';
+-- Removes all students in grade C.
+
+-- Example 3: Delete all rows (dangerous!)
+DELETE FROM Students;
+-- Removes every row from Students table.
+-- Table structure remains, but data is gone.
+
+-- Important Notes
+1. Always use WHERE to avoid deleting all rows accidentally.
+2. Safe Mode (in MySQL Workbench) blocks DELETE without WHERE or LIMIT.
+3. DELETE removes data row by row (slower for large tables compared to TRUNCATE).
+
+
+
+===============================================================CASCADE IN FOREIGN KEY
+-- Purpose
+Cascading defines what happens to child table rows
+when a parent table row is UPDATED or DELETED.
+
+-- Types of Cascading Actions
+1. ON DELETE CASCADE
+   → If a parent row is deleted, all related child rows are also deleted.
+
+   Example:
+   CREATE TABLE Library (
+       borrow_id INT PRIMARY KEY,
+       book_title VARCHAR(100),
+       student_id INT,
+       FOREIGN KEY (student_id)
+       REFERENCES Students(student_id)
+       ON DELETE CASCADE
+   );
+   -- If a student is deleted from Students,
+   -- all their borrow records in Library are automatically removed.
+
+2. ON UPDATE CASCADE
+   → If a parent key value is updated, the child table foreign key updates automatically.
+   Example:
+   CREATE TABLE Library (
+       borrow_id INT PRIMARY KEY,
+       book_title VARCHAR(100),
+       student_id INT,
+       FOREIGN KEY (student_id)
+       REFERENCES Students(student_id)
+       ON UPDATE CASCADE
+   );
+   -- If student_id changes in Students,
+   -- the Library table updates the foreign key to match.
+
+3. ON DELETE SET NULL
+   → If a parent row is deleted, child foreign key becomes NULL.
+
+4. ON DELETE RESTRICT / NO ACTION
+   → Prevents deletion if child rows exist.
+
+-- Key Points
+✔ Cascading ensures referential integrity between tables.
+✔ It automates changes, reducing manual updates.
+✔ Must be used carefully to avoid accidental mass deletions.
+
+
+
+=======================================================================ALTER
+TO CHANGE THE TABLE SCHEMA/STRUCTURE
+
+-- 1. ADD
+Purpose: Add a new column or constraint to a table.
+Syntax:
+ALTER TABLE Students ADD email VARCHAR(50);
+Definition: ADD introduces a new column or constraint into the table schema.
+
+-- 2. DROP
+Purpose: Remove a column or constraint from a table.
+Syntax:
+ALTER TABLE Students DROP COLUMN email;
+Definition: DROP permanently deletes a column/constraint from the table.
+
+-- 3. RENAME
+Purpose: Rename a table or column (DBMS-specific).
+Syntax (MySQL):
+ALTER TABLE Students RENAME TO Learners;
+Definition: RENAME changes the name of a table or column.
+
+-- 4. CHANGE (MySQL-specific)
+Purpose: Rename a column AND change its datatype at the same time.
+Syntax:
+ALTER TABLE Students CHANGE old_col new_col VARCHAR(100);
+Definition: CHANGE renames a column and modifies its type in one step.
+
+-- 5. MODIFY
+Purpose: Change the datatype of a column without renaming.
+Syntax:
+ALTER TABLE Students MODIFY age SMALLINT;
+Definition: MODIFY alters the column type only.
+
+-- 6. TRUNCATE (separate DDL command, not ALTER)
+Purpose: Remove all rows from a table instantly, but keep structure.
+Syntax:
+TRUNCATE TABLE Students;
+Definition: TRUNCATE clears all data but preserves the table schema.
+
+
+
+========================================================================JOINS
+-- 1. INNER JOIN
+Purpose: Returns rows where there is a match in both tables.
+Syntax:
+SELECT s.name, c.course_name
+FROM Students s
+INNER JOIN Courses c ON s.course_id = c.id;
+
+Definition: Shows only matching rows between tables.
+
+
+-- 2. LEFT JOIN
+Purpose: Returns all rows from the left table, plus matching rows from the right.
+Syntax:
+SELECT s.name, c.course_name
+FROM Students s
+LEFT JOIN Courses c ON s.course_id = c.id;
+
+Definition: Keeps all left table rows, fills unmatched right rows with NULL.
+
+
+-- 3. RIGHT JOIN
+Purpose: Returns all rows from the right table, plus matching rows from the left.
+Syntax:
+SELECT s.name, c.course_name
+FROM Students s
+RIGHT JOIN Courses c ON s.course_id = c.id;
+
+Definition: Keeps all right table rows, fills unmatched left rows with NULL.
+
+
+-- 4. FULL OUTER JOIN
+Purpose: Returns all rows from both tables, with NULLs where no match exists.
+Syntax (SQL Server/Oracle):
+SELECT s.name, c.course_name
+FROM Students s
+FULL OUTER JOIN Courses c ON s.course_id = c.id;
+
+Definition: Combines LEFT + RIGHT JOIN results.
+
+
+-- 5. SELF JOIN
+Purpose: Joins a table to itself.
+Syntax:
+SELECT e.name AS Employee, m.name AS Manager
+FROM Employees e
+INNER JOIN Employees m ON e.manager_id = m.id;
+
+Definition: Useful for hierarchical data (e.g., employees and managers).
+
+
+-- 6. UNION
+Purpose: Combines results of two SELECT queries into one result set.
+Syntax:
+SELECT name FROM Students
+UNION
+SELECT name FROM Teachers;
+
+Definition: Merges rows from multiple queries, removes duplicates by default.
+Use UNION ALL to keep duplicates.
+
+
+
+======================================================================SUBQURIES
+-- 1. Definition
+A subquery is a query nested inside another SQL statement.
+It can appear in SELECT, FROM, WHERE, or HAVING clauses.
+
+-- 2. Types of Subqueries
+
+a) In WHERE clause
+Purpose: Filter rows using results of another query.
+Example:
+SELECT name
+FROM Students
+WHERE age > (SELECT AVG(age) FROM Students);
+
+Definition: Returns students older than the average age.
+
+b) In FROM clause
+Purpose: Treat subquery as a temporary table.
+Example:
+SELECT sub.grade, sub.avg_age
+FROM (SELECT grade, AVG(age) AS avg_age
+      FROM Students
+      GROUP BY grade) AS sub;
+
+Definition: Subquery result is used like a table.
+
+c) In SELECT clause
+Purpose: Return a calculated value for each row.
+Example:
+SELECT name,
+       (SELECT COUNT(*) FROM Courses WHERE Courses.student_id = Students.id) AS course_count
+FROM Students;
+
+Definition: Shows each student with their course count.
+
+d) In HAVING clause
+Purpose: Compare group results with another query.
+Example:
+SELECT grade, AVG(age) AS avg_age
+FROM Students
+GROUP BY grade
+HAVING AVG(age) > (SELECT AVG(age) FROM Students);
+
+Definition: Keeps only grades with avg_age above overall average.
+
+-- 3. Key Points
+✔ Subqueries must be enclosed in parentheses.
+✔ Can return single value (scalar), one row, or multiple rows.
+✔ Often used with IN, EXISTS, ANY, ALL operators.
+✔ Useful for complex filtering and dynamic comparisons.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
