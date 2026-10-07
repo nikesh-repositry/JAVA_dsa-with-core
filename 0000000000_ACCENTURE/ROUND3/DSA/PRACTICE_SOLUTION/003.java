@@ -13,7 +13,7 @@ public class q3 {
         }
         System.out.println(res);
 
-        Arrays.sort(arr);   //method two but less optimized than above
+        Arrays.sort(arr);   //method two but less optimized than above o(nlonn)
         System.out.println(arr[0]);
     }
 }
