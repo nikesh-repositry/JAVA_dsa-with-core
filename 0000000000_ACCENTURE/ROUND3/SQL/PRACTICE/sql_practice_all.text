@@ -1,0 +1,167 @@
+there is a database made name with accenture_sql inside which there are 10 tables
+which are 
+courses
+customers
+departments
+employees
+enrollments
+order_items
+orders
+products
+students
+
+now if i want to do any operation in any of these tables then the very first command 
+which i need to use is
+LOAD THE REQUIRED DATABASE
+//=
+use accenture_sql  
+//=this load the database which i need 
+
+  
+HOW TO SEE ALL DATABASES?
+//=
+show databases;
+//
+
+  
+HOW TO SEE ALL TABLES  INSIDE A DATABASE
+//=
+show  tables;
+//
+
+  
+HOW TO COUNT TOTAL NUMBER OF TABLES IN A DATABASE
+//
+SELECT COUNT(*)
+FROM information_schema.tables
+WHERE table_schema = DATABASE();
+//=in this query 
+information_schema ✅ Fixed system database provided by MySQL.
+Stores metadata about databases, tables, columns, etc.
+
+tables ✅ Fixed table inside information_schema.
+Contains information about all tables in all databases.
+
+table_schema ✅ Fixed column name.
+Stores the database name to which a table belongs.
+
+
+//CRUD OPERATION=========================
+1. INSERT A NEW STUDENT
+INSERT INTO students VALUES (7,'Ankit',22,'B','Noida');
+
+2. DISPLAY ALL STUDENTS
+SELECT * FROM students;
+
+3. CHANGE RAHUL GRADE TO B
+update students
+set grade = 'B'
+WHERE student_name = 'rahul'; //student_name is not genrally primary key so it required to change the safe mode and by this command all rahul grade will be changed
+//instead with where we i should use id
+
+4. DELETE STUDENT WITH ID 7
+delete from students
+where student_id = 7
+
+5. INSERT MULTIPLE STUDENTS
+INSERT INTO STUDENTS VALUES
+(7, 'Ankit',25,'B','Faridabad'),
+(8, 'Jully', 24,'B','Noida')
+//do not forget to insert , after each line except the last and first
+
+
+//SELECT+WHERE
+1. DISPLAY NAME AND SALARY OF EACH EMPLOYEE
+select e.employee_name,e.salary from employees e
+// here e as alias used but it can be ignored here no change in result
+
+2. DISPLAY ALL EMPLOYEE HAVING SALARY GREATER THAN 60000
+select * from employees
+where salary>60000
+
+3. DISPLAY ALL EMPLOYEE WHOM CITY IS DELHI
+select * from employees
+where city='Delhi'
+
+4. DISPLAY ALL EMPLOYEE HAVING SALARY BETWEEN 40K TO 70K
+select * from employees
+where SALARY BETWEEN 40000 AND 70000
+
+5. DISPLAY ALL STUDENTS WHOSE AGE IS NULL
+SELECT * FROM STUDENTS
+WHERE age is NULL
+
+
+//OPERATORS
+1. DISPLAY ALL EMPLOYEES WHOSE SALARY > 50K AND CITY IS DELHI
+SELECT * FROM EMPLOYEES
+WHERE SALARY>50000 AND CITY = 'Delhi'
+
+2. DISPLAY ALL STUDENTS WHOSE CITY IS EITHER DELHI OR NOIDA
+SELECT * FROM STUDENTS
+WHERE  city = 'Noida' or CITY = 'Delhi'
+
+3. DISPLAY EMPLOYEES WHOSE CITY IS NOT DELHI
+SELECT * FROM EMPLOYEES
+WHERE NOT CITY = 'Delhi'
+
+4. ALL PRODUCTS PRICE LESS THAN EQUAL TO 5000
+SELECT * FROM EMPLOYEES
+WHERE NOT CITY = 'Delhi'
+
+5. DISPLAY PRODUCTS AFTER DOUBLING THE PRICE 
+SELECT PRODUCT_NAME, PRICE*2 AS DOUBLE_PRICE FROM PRODUCTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
