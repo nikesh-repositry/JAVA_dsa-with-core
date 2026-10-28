@@ -258,6 +258,114 @@ LIMIT 3
 
 
 
+//INNER JOIN
+1. EMPLOYEE NAME WITH DEPARTMENT NAME
+select e.employee_name, d.department_name
+from employees e
+inner join departments d
+on e.department_id = d.department_id
+
+2. SHOW EMPLOYEE AND DEPARTMENT SALARY
+select e.employee_name, d.department_name, e.salary
+from employees e
+join departments d
+on e.employee_id = d.department_id
+
+3. CUSTOMER AND THEIR ORDERS
+select c.customer_name, o.order_id
+from customers c
+inner join orders o
+on c.customer_id = o.customer_id
+
+4. ORDERS WITH CUSTOMER NAMES
+select o.order_id, c.customer_name, o.status
+from orders o
+inner join customers c
+on o.customer_id = c.customer_id
+
+5. STUDENTS WITH  THEIR COURSES
+SELECT s.student_name, c.course_name
+FROM students s
+inner join enrollments e on s.student_id = e.student_id
+inner join courses c on c.course_id = e.course_id
+
+
+
+
+//LEFT JOIN
+1. SHOW ALL DEPARTMENTS AND THEIR EMPLOYEES
+SELECT d.department_name, e.employee_name
+from departments d
+left join employees e
+on d.department_id = e.department_id
+
+2. SHOW ALL CUSTOMERS INCLUDING THOSE WITHOUT ORDERS
+select c.customer_name, o.order_id
+from customers c
+left join orders o
+on c.customer_id = o.customer_id
+
+3. FIND CUSTOMERS WITHOUT ORDERS
+select c.customer_name 
+from customers c
+left join orders o
+on c.customer_id = o.customer_id
+where o.order_id is null
+
+4. SHOW ALL COURSES AND ENROLLED STUDENTS
+select c.course_name, s.student_name
+from courses c
+left join enrollments e on c.course_id = e.course_id
+left join students s on s.student_id = e.student_id
+
+5. FIND COURSES WITH NO STUDENTS
+select c.course_name
+from courses c
+left join enrollments e
+on c.course_id = e.course_id
+where student_id is null
+
+
+
+//RIGHT JOIN
+1. SHOW ALL DEPARTMENTS AND EMPLOYEES
+SELECT e.employee_name, d.department_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
+
+2. SHOW ALL COURSES AND STUDENTS
+select c.course_name, s.student_name
+from students s
+right join enrollments e on s.student_id= e.student_id
+right join courses c on c.course_id = e.course_id
+
+3. SHOW ALL CUSTOMERS USING RIGHT JOIN
+select c.customer_name, o.order_id
+from orders o
+right join customers c
+on c.customer_id = o.customer_id
+
+4. SHOW ALL DEPARTMENTS AND EMPLOYEE IDS
+select d.department_name, e.employee_id
+from employees e
+right join departments d
+on e.department_id = d.department_id
+
+5. FIND DEPARTMENTS WITHOUT EMPLOYEES
+SELECT d.department_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id
+WHERE e.employee_id IS NULL;
+
+
+
+
+
+
+
+
 
 
 
