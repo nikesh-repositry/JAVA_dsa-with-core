@@ -361,9 +361,276 @@ WHERE e.employee_id IS NULL;
 
 
 
+//SELF JOIN
+1. DISPLAY EMPLOYEE AND MANAGER NAME
+select
+e.employee_name as employee,
+m.employee_name as manager
+from employees e
+left join employees m
+on e.employee_id = m.employee_id
+
+2. SHOW EMPLOYEES WHO HAVE MANAGERS
+select 
+e.employee_name as employee,
+m.employee_name as manager
+from employees e
+inner join employees m
+on e.employee_id = m.employee_id
+
+3. FIND EMPLOYEES REPORTING TO RAHUL
+select 
+e.employee_name, m.employee_name as manager
+from employees e
+join employees m
+on e.manager_id = m.employee_id
+where m.employee_name = 'Rahul'
+
+4. SHOW MANAGER ID AND EMPLOYEE COUNT
+select manager_id, count(*) as total
+from employees e
+where e.manager_id is not null
+group by manager_id
+
+5. SHOW EMPLOYEE AND MANAGER SALARY
+SELECT e.employee_name,
+       e.salary AS employee_salary,
+       m.salary AS manager_salary
+FROM employees e
+JOIN employees m
+ON e.manager_id = m.employee_id;
 
 
 
+//UNION 
+1. COMBINE EMPLOYEE AND CUSTOMER NAMES
+select employee_name as name from employees 
+union
+select customer_name from customers
+
+2. KEEP DUBLICATES
+select employee_name as name from employees 
+union all
+select customer_name from customers
+
+3. COMBINE DELHI PEOPLE FROM TWO TABLES
+select employee_name as name from employees where city = 'Delhi'
+union
+select customer_name from customers where city = 'Delhi'
+
+4. COMBINE STUDENT AND EMPLOYEE NAMES
+select student_name as name from students
+union
+select employee_name from employees
+
+5. COMBINE TWO CITY LISTS
+select city as name from students
+union 
+select city from customers
+
+
+
+// SUBQUERY - WHERE
+1. EMPLOYEES EARNING ABOVE AVERAGE SALARY
+SELECT *
+from employees
+where salary>(
+select avg(salary)
+from employees)
+
+2. EMPLOYEE WITH MAXIMUM SALARY
+select *
+from employees
+where salary = (
+select max(salary)
+from employees)
+
+3. STUDENTS OLDER THAN AVERAGE AGE
+select *
+from students
+where age>(
+select avg(age)
+from students)
+
+4. PRODUCTS MORE EXPENSIVE THAN AVERAGE
+select * from products
+where price>(select avg(price) from products)
+
+5. EMPLOYEES IN THE IT DEPARTMENT
+select * from employees
+where department_id = (select department_id from departments where department_name = 'IT' )
+
+
+
+//EXISTS/NON EXISTS 
+1. CUSTOMERS WHO HAVE ORDERS
+select *  
+from customers c
+where exists(
+select 1
+from orders o
+where  c.customer_id = o.customer_id)
+
+2. CUSTOMERS WITH NO ORDERS
+select *
+from customers c
+where not exists(
+select 1
+from orders o
+where c.customer_id = o.customer_id)
+
+3. STUDENTS ENROLLED IN AT LEAST ONE COURSE
+select * 
+from students s
+where exists (
+select 1
+from enrollments c
+where c.student_id = s.student_id)
+
+4. STUDENTS WITH NO ENROLLMENT
+select * 
+from students s
+where not exists (
+select 1
+from enrollments c
+where c.student_id = s.student_id)
+
+5. DEPARTMENTS HAVING EMPLOYEES
+select *
+from departments d
+where exists(
+select 1
+from employees e
+where e.department_id = d.department_id)
+
+
+
+//SUBQUERY-FROM 
+1. FIND AVERAGE SALARY BY DEPARTMENT USING A SUBQUERY
+select *
+from(
+select department_id, avg(salary) as avgsal
+from employees
+group by department_id)
+as x
+
+2. DEPARTMENTS WHOSE AVERAGE SALARY EXCEEDS 50000
+select department_id
+from(
+select department_id, avg(salary) as avgsal
+from employees
+group by department_id)
+as x
+where avgsal>50000
+
+3. HIGHEST DEPARTMENT AVERAGE SALARY
+select  max(avgsal)
+from (
+select department_id, avg(Salary) as avgsal
+from employees
+group by department_id)
+as x
+
+4. COUNT EMPLOYEES PER DEPARTMENT USING DERIVED TABLE
+SELECT *
+FROM (
+    SELECT department_id, COUNT(*) AS total
+    FROM employees
+    GROUP BY department_id
+) AS x;
+
+5. SHOW DEPARTMENTS HAVING MORE THAN ONE EMPLOYEE
+select department_id
+from (
+select department_id, count(*) as total
+from employees
+group by department_id)
+as x
+where total>1
+
+
+
+//SUBQUERY - SELECT
+1. show each employee with total employee count
+SELECT employee_name,
+(select count(*) from employees) as total_emp
+from employees
+
+2. show each student with total students
+select student_name,
+(select count(*) from students) as total
+from students
+
+3. show each employee and average salary
+select employee_name, salary,
+(select avg(salary) from employees) as avgsal
+from employees
+
+4. show each customer with order count
+select customer_name,
+(select count(*) from orders o
+where c.customer_id=o.customer_id) as total
+from customers c
+
+5. show each student with course count
+select student_name,
+(select count(*) from enrollments e
+where e.student_id = s.student_id) as total
+from students s
+
+
+
+//SUBQUERY-HAVING
+1. DEPARTMENTS WHOSE AVERAGE SALARY IS ABOVE OVERALL AVERAGE
+SELECT department_id, avg(salary) as avgsal
+from employees
+group by department_id
+having avg(salary)>(select avg(salary) from employees)
+
+2. GRADES WHOSE AVERAGE AGE IS ABOVE OVERALL AVERAGE
+select grade, avg(age) as ff
+from students
+group by grade
+having avg(age)>(select avg(age) from students)
+
+3. DEPARTMENTS WHOSE EMPLOYEE COUNT IS ABOVE AVERAGE DEPARTMENT SIZE
+SELECT department_id, COUNT(*) AS total
+FROM employees
+GROUP BY department_id
+HAVING COUNT(*) > (
+    SELECT AVG(total)
+    FROM (
+        SELECT COUNT(*) AS total
+        FROM employees
+        GROUP BY department_id
+    ) x
+);
+
+4. CITIES WHOSE STUDENT COUNT IS ABOVE AVERAGE CITY COUNT
+SELECT city, COUNT(*) AS total
+FROM students
+GROUP BY city
+HAVING COUNT(*) > (
+    SELECT AVG(total)
+    FROM (
+        SELECT COUNT(*) AS total
+        FROM students
+        GROUP BY city
+    ) x
+);
+
+5. COURSES HAVING ENROLLMENT ABOVE AVERAGE ENROLLMENT COUNT
+SELECT course_id, COUNT(*) AS total
+FROM enrollments
+GROUP BY course_id
+HAVING COUNT(*) > (
+    SELECT AVG(total)
+    FROM (
+        SELECT COUNT(*) AS total
+        FROM enrollments
+        GROUP BY course_id
+    ) x
+);
 
 
 
