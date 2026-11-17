@@ -266,6 +266,38 @@ Common bugs that appear in coding assessments.
         ArrayList<Integer> list13 = new ArrayList<>(Arrays.asList(arr20));
         System.out.println(list13);
 
+
+
+
+        //NESTED ARRAYLIST
+         // Parent list
+        ArrayList<ArrayList<Integer>> nestedList = new ArrayList<>();
+
+        // Sample inner lists to work with
+        ArrayList<Integer> listA = new ArrayList<>(Arrays.asList(10, 20));
+        ArrayList<Integer> listB = new ArrayList<>(Arrays.asList(30, 40));
+        ArrayList<Integer> listC = new ArrayList<>(Arrays.asList(99, 100));
+
+        // 1. ADD: Append an inner list to the end of the parent list
+        nestedList.add(listA); // nestedList: [[10, 20]]
+        nestedList.add(listB); // nestedList: [[10, 20], [30, 40]]
+
+        // 2. ADD AT INDEX: Insert an inner list at a specific position
+        nestedList.add(1, listC); // nestedList: [[10, 20], [99, 100], [30, 40]]
+
+        // 3. GET: Retrieve an entire inner list by its parent index
+        ArrayList<Integer> fetchedList = nestedList.get(1); // Returns [99, 100]
+
+        // 4. SET: Replace an entire inner list at a specific parent index
+        ArrayList<Integer> newList = new ArrayList<>(Arrays.asList(50, 60));
+        nestedList.set(0, newList); // nestedList: [[50, 60], [99, 100], [30, 40]]
+
+        // 5. REMOVE: Delete an entire inner list at a specific parent index
+        nestedList.remove(1); // Removes [99, 100] -> nestedList: [[50, 60], [30, 40]]
+
+        // 6. SIZE: Check how many inner lists are inside the parent list
+        int totalInnerLists = nestedList.size(); // Returns 2
+
         /*
         Method	Purpose	Example
 add(x)	Add element at end	list.add(10);
