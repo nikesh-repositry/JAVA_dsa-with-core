@@ -20,6 +20,34 @@ public class BASIC {
         //then java normal array to string conversion rule takes back over for eg
         System.out.println("result"+ s3.toCharArray()); //result[C@65b3120a  so use String.valueOf() instead to convert it back
         System.out.println("result" + String.valueOf(s3.toCharArray())); //resultnikesh
+        /*
+        
+Digits (\\d and \\D)
+
+• \\d: Matches any single digit from 0 to 9.
+• \\d+: Matches one or more consecutive digits together as a whole number.
+• \\D: Matches any single non-digit character.
+• \\D+: Matches one or more consecutive non-digit characters together.
+
+Whitespace (\\s and \\S)
+
+• \\s: Matches any single whitespace character (space, tab \t, or newline \n).
+• \\s+: Matches one or more consecutive whitespace characters together as a single gap.
+• \\S: Matches any single non-whitespace character.
+• \\S+: Matches one or more consecutive non-whitespace characters (like an entire continuous word or token).
+
+Word Characters (\\w and \\W)
+
+• \\w: Matches any single word character (a–z, A–Z, 0–9, or underscore _).
+• \\w+: Matches one or more consecutive word characters together as a complete word.
+• \\W: Matches any single non-word character (symbols, punctuation, or spaces).
+• \\W+: Matches one or more consecutive non-word characters together.
+
+Boundaries (\\b and \\B)
+
+• \\b: Matches a word boundary (the invisible position at the start or end of a word).
+• \\B: Matches any position that is not a word boundary (inside a word or between symbols). (Note: + is not used with \\b or \\B because boundaries match positions rather than characters.)
+        */
 
 
         //STRING COMPARISON  equals() equalsIgnoreCase() compareTo() compareToIgnoreCase()
