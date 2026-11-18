@@ -119,6 +119,9 @@ Boundaries (\\b and \\B)
         System.out.println(s.replaceAll("[^0-9]","")); //123456
         String s13 = "  java  is a    powerful  language     ";
         System.out.println(s13.replaceAll("\\s","")); //javaisapowerfullanguage   REMOVE ALL THE WHITESPACES
+        // 1. Replace multiple middle spaces with a single space, then remove outer spaces
+        String cleanSentence = s13.replaceAll("\\s+", " ").strip();
+        System.out.println(cleanSentence); // Output: "java is a powerful language"
         String s14 = "hello123 $$%%% there082@##$";
         System.out.println(s14.replaceAll("[^a-zA-z]","")); //hellothere    REMOVING EVERYTHING EXCEPT LETTERS
         //replaceAll() uses regex. For simple character replacement, prefer replace().
